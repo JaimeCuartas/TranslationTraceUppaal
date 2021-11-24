@@ -3,8 +3,10 @@ package translation.visitor;
 import translation.Antlr.TraceUppaalParser;
 import translation.Antlr.TraceUppaalParserBaseVisitor;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Locale;
 import java.util.Set;
 
 public class TranslationVisitor extends TraceUppaalParserBaseVisitor<String> {
@@ -60,7 +62,14 @@ public class TranslationVisitor extends TraceUppaalParserBaseVisitor<String> {
 
     @Override
     public String visitDelay(TraceUppaalParser.DelayContext ctx) {
-        return "delay ".concat(ctx.POINT().toString()).concat(";\n");
+        String delayString = ctx.POINT().toString();
+        double delayDouble = Double.parseDouble(delayString);
+
+        //DecimalFormat dFormat = new DecimalFormat("#.####");
+        //delayString = dFormat.format(delayDouble);
+        delayString = String.format(Locale.US, "%.4f", delayDouble);
+
+        return "delay ".concat(delayString).concat(";\n");
     }
 
     @Override

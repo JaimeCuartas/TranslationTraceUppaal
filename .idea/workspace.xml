@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb12b95c-9f22-448a-84dd-90dfff72a00c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/preamble.trn" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/translation/Main/Main2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/translation/Tron/TronExec.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/similarTraces.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Antlr/gen/TraceUppaalLexer.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Tron/TronExec.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Tron/TronExec.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/visitor/TranslationVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/visitor/TranslationVisitor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preamble.trn" beforeDir="false" afterPath="$PROJECT_DIR$/preamble.trn" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/translation/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/translation/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/translation/Tron/TronExec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/translation/Tron/TronExec.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/translation/visitor/TranslationVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/translation/visitor/TranslationVisitor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,12 +51,13 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../poi-bin-5.1.0/poi-scratchpad-5.1.0.jar" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Application.Main2">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="translation.Main.Main" />
       <module name="TranslationTraceUppaal" />
@@ -81,8 +86,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main2" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main2" />
       </list>
     </recent_temporary>
   </component>
@@ -106,7 +111,15 @@
       <workItem from="1636535392625" duration="2033000" />
       <workItem from="1636708538701" duration="1926000" />
       <workItem from="1637242153023" duration="9059000" />
-      <workItem from="1637315203740" duration="4047000" />
+      <workItem from="1637315203740" duration="5504000" />
+      <workItem from="1637326304490" duration="6260000" />
+      <workItem from="1637337014078" duration="447000" />
+      <workItem from="1637337578990" duration="177000" />
+      <workItem from="1637337773712" duration="2015000" />
+      <workItem from="1637572792634" duration="1920000" />
+      <workItem from="1637584430660" duration="11834000" />
+      <workItem from="1637674365101" duration="1344000" />
+      <workItem from="1637703308576" duration="5803000" />
     </task>
     <servers />
   </component>

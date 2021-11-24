@@ -3,6 +3,7 @@ package translation.Main;
 
 import translation.Antlr.TraceUppaalLexer;
 import translation.Antlr.TraceUppaalParser;
+
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -13,10 +14,9 @@ import translation.Tron.TronExec;
 import translation.visitor.TranslationVisitor;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
+import java.lang.reflect.Array;
+import java.util.*;
+
 
 public class Main {
 
@@ -28,7 +28,7 @@ public class Main {
         String pathFolder = file.getAbsolutePath();
 
         assert pathnames != null;
-        int n = pathnames.length;
+        int nModels = pathnames.length;
 
         Set<String> channels = new HashSet<>();
 
@@ -45,20 +45,17 @@ public class Main {
         }
 
 
-        int seed = 1;
+        int nTraces = 1;
 
         for(String nameModel: pathnames){
             String fullNameModel = pathFolder.concat("\\").concat(nameModel);
 
-
-
-            for(int i =0; i<seed; i++){
+            for(int i =0; i<nTraces; i++){
                 try{
-                    String cmd = "\"C:\\Program Files\\uppaal64-4.1.25-5\\bin-Windows\\verifyta.exe\" -q -t 0 -r ".concat(Integer.toString(i)).concat(" ").concat(fullNameModel).concat(" ").concat(prop).concat("\"");
+                    String cmd = "\"C:\\Program Files\\uppaal64-4.1.25-5\\bin-Windows\\verifyta.exe\" -q -t 0 ".concat(fullNameModel).concat(" ").concat(prop).concat("\"");
                     ProcessBuilder pb = new ProcessBuilder(cmd);
                     pb.redirectErrorStream(true);
-                    Process p = null;
-                    p = pb.start();
+                    Process p = pb.start();
 
                     BufferedReader stdInput = new BufferedReader(new InputStreamReader(p.getInputStream()));
 
@@ -85,7 +82,7 @@ public class Main {
                     FileWriter preambleTrn = null;
 
                     try{
-                        traceTrn = new FileWriter(folderTraces.concat("\\").concat(nameModel).concat(Integer.toString(i)).concat("trace.trn"));
+                        traceTrn = new FileWriter(folderTraces.concat("\\").concat(nameModel).concat(Integer.toString(i)).concat("Trace.trn"));
 
                         TranslationVisitor eval = new TranslationVisitor(channels);
                         traceTrn.write(eval.visit(tree));
@@ -111,18 +108,73 @@ public class Main {
             e.printStackTrace();
         }
 
-        TronExec tron = new TronExec();
 
 
-        HashMap<String, ArrayList<Thread>> mapThreads = new HashMap<>();
+        // This data needs to be written (Object[])
+        //Map<String, Object[]> traceData = new TreeMap<String, Object[]>();
+        ArrayList<Object[]> traceData = new ArrayList<>();
 
+        traceData.add(new Object[]{"Modelo1", "Modelo2", "Bisimilar?"});
+
+        ArrayList<String> bisimilar = new ArrayList<>();
+        ArrayList<String> noBisimilar = new ArrayList<>();
+
+
+
+
+        for(int i = 0; i<nModels; i++){
+
+            for(int j =i+1; j<nModels; j++){
+
+                boolean passComplete = new TronExec().checkModels(pathFolder, pathnames[i], pathnames[j], folderTraces, nTraces);
+                if(passComplete){
+                    bisimilar.add(pathnames[i].concat("-").concat(pathnames[j]));
+                }
+                else{
+                    noBisimilar.add(pathnames[i].concat("-").concat(pathnames[j]));
+                }
+
+            }
+        }
+
+        String saveFile = "similarTraces.csv";
+
+        FileWriter fw = null;
+        try {
+            fw = new FileWriter(saveFile);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        PrintWriter out = new PrintWriter(fw, true);
+
+
+        out.print("\nBisimilar\n");
+        for(String pairBis: bisimilar){
+            out.print(pairBis);
+            out.print("\n");
+        }
+        out.print("\nNo Bisimilar\n");
+        for(String pairNoBis: noBisimilar){
+            out.print(pairNoBis);
+            out.print("\n");
+        }
+
+        //Flush the output to the file
+        out.flush();
+
+        //Close the Print Writer
+        out.close();
+
+
+
+        /*
         for(String nameModel: pathnames) {
 
             String model = pathFolder.concat("\\").concat(nameModel);
 
             mapThreads.put(nameModel, new ArrayList<>());
             ArrayList<Thread> threads = mapThreads.get(nameModel);
-            for(int i=0; i<seed; i++){
+            for(int i=0; i<nTraces; i++){
                 String trace = folderTraces.concat(nameModel).concat(Integer.toString(i)).concat("trace.trn");
                 threads.add(new Thread(()->{
                     new TronExec().testTrace(model, trace);
@@ -132,11 +184,15 @@ public class Main {
         }
 
 
+
+
         for(ArrayList<Thread> listThread: mapThreads.values()){
             for(Thread thread: listThread){
                 thread.start();
             }
         }
+
+         */
 
 
     }
