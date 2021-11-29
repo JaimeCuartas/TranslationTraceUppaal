@@ -2,16 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb12b95c-9f22-448a-84dd-90dfff72a00c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/similarTraces.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Main/Main1Trace.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/similarTracesLog.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/translation/Main/Main1Trace.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/translation/Main/Main1TraceRun.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Antlr/gen/TraceUppaalLexer.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Main/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Tron/TronExec.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Tron/TronExec.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/visitor/TranslationVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/visitor/TranslationVisitor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/preamble.trn" beforeDir="false" afterPath="$PROJECT_DIR$/preamble.trn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similarTraces.csv" beforeDir="false" afterPath="$PROJECT_DIR$/similarTraces.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/translation/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/translation/Main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/translation/Tron/TronExec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/translation/Tron/TronExec.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/translation/visitor/TranslationVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/translation/visitor/TranslationVisitor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,9 +58,40 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="translation.Main" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main1TraceRun">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="translation.Main.Main" />
+      <module name="TranslationTraceUppaal" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="translation.Main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main1Trace" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="translation.Main.Main1Trace" />
+      <module name="TranslationTraceUppaal" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="translation.Main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main1TraceRun" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="translation.Main.Main1TraceRun" />
       <module name="TranslationTraceUppaal" />
       <extension name="coverage">
         <pattern>
@@ -86,6 +118,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main1TraceRun" />
+        <item itemvalue="Application.Main1Trace" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main2" />
       </list>
@@ -120,6 +154,17 @@
       <workItem from="1637584430660" duration="11834000" />
       <workItem from="1637674365101" duration="1344000" />
       <workItem from="1637703308576" duration="5803000" />
+      <workItem from="1637746728691" duration="3752000" />
+      <workItem from="1637757394563" duration="957000" />
+      <workItem from="1637768723376" duration="362000" />
+      <workItem from="1637832403932" duration="595000" />
+      <workItem from="1637847289917" duration="3560000" />
+      <workItem from="1637864740614" duration="557000" />
+      <workItem from="1637936676530" duration="12134000" />
+      <workItem from="1637956848077" duration="598000" />
+      <workItem from="1637958801742" duration="464000" />
+      <workItem from="1637959454151" duration="1446000" />
+      <workItem from="1638188787728" duration="7796000" />
     </task>
     <servers />
   </component>

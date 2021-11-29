@@ -16,28 +16,27 @@ public class TronExec {
             pb.redirectErrorStream(true);
             Process p = null;
             p = pb.start();
+            p.waitFor();
 
             BufferedReader stdInput = new BufferedReader(new InputStreamReader(p.getInputStream()));
 
             String line = null;
-            String traceString = "";
-            boolean testPassed = false;
+
+            System.out.println(cmd);
+            System.out.println(trace);
 
             while ((line = stdInput.readLine()) != null) {
-                //System.out.println(line);
+                System.out.println(line);
+
                 if(line.contains("TEST PASSED")){
-                    System.out.println("#############################################3");
-                    System.out.println("#############################################3");
-                    System.out.println("#############################################3");
-                    System.out.println(model);
-                    System.out.println(trace);
-                    System.out.println("#############################################3");
-                    System.out.println("#############################################3");
+                    System.out.println("TEST PASSED");
                     return true;
                 }
             }
 
-        } catch (IOException e) {
+            System.out.println("NOT PASSED");
+
+        } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
 
@@ -47,11 +46,12 @@ public class TronExec {
     public boolean checkModels(String pathFolder, String nameModel1, String nameModel2, String folderTraces, int nTraces ) {
 
         String model1 = pathFolder.concat("\\").concat(nameModel1);
+
+        if (simulationTraces(model1, nameModel2, nTraces, folderTraces)) return false;
+
         String model2 = pathFolder.concat("\\").concat(nameModel2);
 
-        if (simulationTraces(model1, nameModel1, nTraces, folderTraces)) return false;
-
-        return !simulationTraces(model2, nameModel2, nTraces, folderTraces);
+        return !simulationTraces(model2, nameModel1, nTraces, folderTraces);
     }
 
     private boolean simulationTraces(String model, String nameModel, int nTraces, String folderTraces) {

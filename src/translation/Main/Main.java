@@ -25,6 +25,8 @@ public class Main {
         File file = new File("C:\\Users\\Jaime\\Desktop\\Train-Gate-Controller\\carpetaMut");
         final String[] pathnames = file.list();
 
+
+
         String pathFolder = file.getAbsolutePath();
 
         assert pathnames != null;
@@ -121,6 +123,18 @@ public class Main {
 
 
 
+        String saveFileLog = "similarTracesLog.csv";
+
+        FileWriter fwLog = null;
+        try {
+            fwLog = new FileWriter(saveFileLog);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        PrintWriter outLog = new PrintWriter(fwLog, true);
+
+
+
 
         for(int i = 0; i<nModels; i++){
 
@@ -128,14 +142,26 @@ public class Main {
 
                 boolean passComplete = new TronExec().checkModels(pathFolder, pathnames[i], pathnames[j], folderTraces, nTraces);
                 if(passComplete){
+                    outLog.print("Bisimilar, ");
+                    outLog.print(pathnames[i].concat("-").concat(pathnames[j]));
+                    outLog.print("\n");
                     bisimilar.add(pathnames[i].concat("-").concat(pathnames[j]));
                 }
                 else{
+                    outLog.print("No Bisimilar, ");
+                    outLog.print(pathnames[i].concat("-").concat(pathnames[j]));
+                    outLog.print("\n");
                     noBisimilar.add(pathnames[i].concat("-").concat(pathnames[j]));
                 }
 
             }
         }
+
+        //Flush the output to the file
+        outLog.flush();
+
+        //Close the Print Writer
+        outLog.close();
 
         String saveFile = "similarTraces.csv";
 
