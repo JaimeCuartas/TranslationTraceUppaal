@@ -9,8 +9,25 @@ import java.util.Scanner;
 
 
 public class Main1TraceRun {
-    public static void main(String[] args) throws IOException {
-        //new A().executeCommand("java -v");
+    public static void main(String[] args) throws IOException, InterruptedException {
+        //new A().executeCommand("\"C:\\Users\\Jaime\\OneDrive - correounivalle.edu.co\\Documentos\\uppaal-tron-1.5-win32\\tron.exe\" \"C:\\Users\\Jaime\\Desktop\\Train-Gate-Controller\\carpetaMut\\tadSyncid8id4.xml\" -Q log -I TraceAdapter -- -m \"preamble.trn\"");
+
+
+
+        ProcessBuilder builder = new ProcessBuilder(
+                "cmd.exe", "/c", "dir \"C:\\Users\"");
+        builder.redirectErrorStream(true);
+        Process p = builder.start();
+        p.waitFor();
+
+        BufferedReader buf = new BufferedReader(new InputStreamReader(p.getInputStream()));
+        String line = "";
+        while ((line=buf.readLine())!=null) {
+            System.out.println(line);
+        }
+        /*
+        "C:\Users\Jaime\Desktop\Train-Gate-Controller\mut\tadSyncid8id2.xml0Trace.trn"
+
         Process process = Runtime.getRuntime().exec("java --version");
         BufferedReader in = new BufferedReader(new InputStreamReader(process.getInputStream()));
         String line = null;
@@ -19,6 +36,8 @@ public class Main1TraceRun {
             if (line == null) { break; }
             System.out.println(line);
         }
+
+         */
     }
 
 
@@ -33,7 +52,12 @@ class A{
     void executeCommand(String command) {
         try {
             log(command);
-            Process process = Runtime.getRuntime().exec(command);
+            //Process process = Runtime.getRuntime().exec(command);
+
+            ProcessBuilder builder = new ProcessBuilder(command);
+
+            builder.redirectInput(new File("C:\\Users\\Jaime\\Desktop\\Train-Gate-Controller\\mut\\tadSyncid8id2.xml0Trace.trn"));
+            Process process = builder.start();
             logOutput(process.getInputStream(), "");
             logOutput(process.getErrorStream(), "Error: ");
             process.waitFor();

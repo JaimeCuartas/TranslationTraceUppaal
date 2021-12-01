@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb12b95c-9f22-448a-84dd-90dfff72a00c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Main/Main1Trace.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/similarTracesLog.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/translation/Main/Main1Trace.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/translation/Main/Main1TraceRun.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/output.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prueba.cmd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Tron/TronExec.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Tron/TronExec.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preamble.trn" beforeDir="false" afterPath="$PROJECT_DIR$/preamble.trn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similarTraces.csv" beforeDir="false" afterPath="$PROJECT_DIR$/similarTraces.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/translation/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/translation/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/translation/Tron/TronExec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/translation/Tron/TronExec.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/executable.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Main/A.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Main/A.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Main/Main1Trace.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Main/Main1Trace.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Main/Main1TraceRun.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Main/Main1TraceRun.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/translation/Main/Main1Trace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/translation/Main/Main1Trace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/translation/Main/Main1TraceRun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/translation/Main/Main1TraceRun.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,16 +52,18 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../poi-bin-5.1.0/poi-scratchpad-5.1.0.jar" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="translation.Main" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main1TraceRun">
+  <component name="RunManager" selected="Application.Main1Trace">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="translation.Main.Main" />
       <module name="TranslationTraceUppaal" />
@@ -118,8 +118,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main1TraceRun" />
         <item itemvalue="Application.Main1Trace" />
+        <item itemvalue="Application.Main1TraceRun" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main2" />
       </list>
@@ -164,7 +164,11 @@
       <workItem from="1637956848077" duration="598000" />
       <workItem from="1637958801742" duration="464000" />
       <workItem from="1637959454151" duration="1446000" />
-      <workItem from="1638188787728" duration="7796000" />
+      <workItem from="1638188787728" duration="11381000" />
+      <workItem from="1638205163501" duration="2187000" />
+      <workItem from="1638269031372" duration="625000" />
+      <workItem from="1638307862322" duration="4954000" />
+      <workItem from="1638348580353" duration="5278000" />
     </task>
     <servers />
   </component>

@@ -11,6 +11,8 @@ public class Main1Trace {
             String cmd = "\"C:\\Users\\Jaime\\OneDrive - correounivalle.edu.co\\Documentos\\uppaal-tron-1.5-win32\\tron.exe\" C:\\Users\\Jaime\\Desktop\\Train-Gate-Controller\\carpetaMut\\tadSyncid8id4.xml -Q log -I TraceAdapter -- -m preamble.trn\"";
 
             ProcessBuilder pb = new ProcessBuilder(
+                    "cmd.exe",
+                    "/c",
                     "\"C:\\Users\\Jaime\\OneDrive - correounivalle.edu.co\\Documentos\\uppaal-tron-1.5-win32\\tron.exe\"",
                     "C:\\Users\\Jaime\\Desktop\\Train-Gate-Controller\\carpetaMut\\tadSyncid8id4.xml",
                     "-Q",
@@ -27,7 +29,7 @@ public class Main1Trace {
             Process p = null;
 
             p = pb.start();
-
+            p.waitFor();
 
             BufferedReader stdInput = new BufferedReader(new InputStreamReader(p.getInputStream()));
 
@@ -45,7 +47,7 @@ public class Main1Trace {
 
             }
 
-        } catch (IOException e) {
+        } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
     }
