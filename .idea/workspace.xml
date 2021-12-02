@@ -2,15 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb12b95c-9f22-448a-84dd-90dfff72a00c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/output.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prueba.cmd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/executable.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Main/A.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Main/A.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Main/Main1Trace.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Main/Main1Trace.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Main/Main1TraceRun.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Main/Main1TraceRun.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carpetaMut/ccn1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/carpetaMut/tadSyncid8id2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/carpetaMut/tadSyncid8id4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/carpetaMut/tmi2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mut/ccn1.xml0Trace.trn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mut/tadSyncid8id2.xml0Trace.trn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mut/tadSyncid8id4.xml0Trace.trn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mut/tmi2.xml0Trace.trn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/translation/Main/Main1Trace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/translation/Main/Main1Trace.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/translation/Main/Main1TraceRun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/translation/Main/Main1TraceRun.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +55,7 @@
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../poi-bin-5.1.0/poi-scratchpad-5.1.0.jar" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="terminal" />
@@ -168,7 +170,9 @@
       <workItem from="1638205163501" duration="2187000" />
       <workItem from="1638269031372" duration="625000" />
       <workItem from="1638307862322" duration="4954000" />
-      <workItem from="1638348580353" duration="5278000" />
+      <workItem from="1638348580353" duration="7887000" />
+      <workItem from="1638435078638" duration="1694000" />
+      <workItem from="1638456334059" duration="1449000" />
     </task>
     <servers />
   </component>

@@ -1,13 +1,3 @@
-
-C:\Users\Jaime\OneDrive - correounivalle.edu.co\Documentos\Github\TranslationTraceUppaal>set model="C:\Users\Jaime\Desktop\Train-Gate-Controller\carpetaMut\tadSyncid8id4.xml" 
-
-C:\Users\Jaime\OneDrive - correounivalle.edu.co\Documentos\Github\TranslationTraceUppaal>set trace="C:\Users\Jaime\Desktop\Train-Gate-Controller\mut\tadSyncid8id2.xml0Trace.trn" 
-
-C:\Users\Jaime\OneDrive - correounivalle.edu.co\Documentos\Github\TranslationTraceUppaal>"C:\Users\Jaime\OneDrive - correounivalle.edu.co\Documentos\uppaal-tron-1.5-win32\tron.exe" "C:\Users\Jaime\Desktop\Train-Gate-Controller\carpetaMut\tadSyncid8id4.xml" -Q log -I TraceAdapter -- -m "C:\Users\Jaime\OneDrive - correounivalle.edu.co\Documentos\Github\TranslationTraceUppaal\preamble.trn"  0<"C:\Users\Jaime\Desktop\Train-Gate-Controller\mut\tadSyncid8id2.xml0Trace.trn" 
-UPPAAL TRON 1.5 using UPPAAL 4.1.2 (rev. 4351), June 2009
-Compiled with i586-mingw32msvc-g++ -Wall -DLIBXML_STATIC -DNDEBUG -O2 -ffloat-store -march=pentiumpro -march=pentium4 -march=prescott -march=pentium-m -DTIGA_MERGE_STATES    -DBOOST_DISABLE_THREADS
-Copyright (c) 1995 - 2009, Uppsala University and Aalborg University.
-All rights reserved.
 Options for UPPAAL TRON:
   Search order is breadth first
   Using no space optimisation
@@ -23,13 +13,4 @@ WARNING: partitioning is inconsistent, use -i option to investigate.
   Timeout: 22000mtu
   Inputs:  (empty)
   Outputs: syncTime(), new(), lower(), down()
-delay @408;
-output new();
-delay @5501;
-output syncTime();
-delay @6018;
-output lower();
-delay @6339;
-output new();
-delay @26490;
-output down();
+TEST PASSED: Time out for testing
