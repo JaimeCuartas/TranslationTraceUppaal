@@ -22,7 +22,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        File file = new File("C:\\Users\\Jaime\\Desktop\\Train-Gate-Controller\\carpetaMut");
+        String mutantsFolder = "/home/jaime/Downloads/TranslationTraceUppaal/Train-Gate-Controller/carpetaMut";
+
+
+        File file = new File(mutantsFolder);
         final String[] pathnames = file.list();
 
 
@@ -34,8 +37,9 @@ public class Main {
 
         Set<String> channels = new HashSet<>();
 
-        String prop = "C:\\Users\\Jaime\\Desktop\\Train-Gate-Controller\\prop.q";
-        String folderTraces = "C:\\Users\\Jaime\\Desktop\\Train-Gate-Controller\\mut\\";
+        String prop = "/home/jaime/Downloads/TranslationTraceUppaal/Train-Gate-Controller/prop.q";
+        String folderTraces = "/home/jaime/Downloads/TranslationTraceUppaal/Train-Gate-Controller/mut/mut/";
+        String verifyTA = "/home/jaime/Downloads/uppaal64-4.1.25-5/bin-Linux/verifyta";
 
         try{
             File theDir = new File(folderTraces);
@@ -47,15 +51,23 @@ public class Main {
         }
 
 
-        int nTraces = 1;
+        int nTraces = 4;
 
         for(String nameModel: pathnames){
-            String fullNameModel = pathFolder.concat("\\").concat(nameModel);
+            String fullNameModel = pathFolder.concat("/").concat(nameModel);
 
             for(int i =0; i<nTraces; i++){
                 try{
-                    String cmd = "\"C:\\Program Files\\uppaal64-4.1.25-5\\bin-Windows\\verifyta.exe\" -q -t 0 ".concat(fullNameModel).concat(" ").concat(prop).concat("\"");
-                    ProcessBuilder pb = new ProcessBuilder(cmd);
+                    //String cmd = "bash ".concat(verifyTA).concat(" -q -t 0 ").concat(fullNameModel).concat(" ").concat(prop).concat("\"");
+                    ProcessBuilder pb = new ProcessBuilder(
+                            "bash",
+                            verifyTA,
+                            "-q",
+                            "-t",
+                            "0",
+                            fullNameModel,
+                            prop
+                    );
                     pb.redirectErrorStream(true);
                     Process p = pb.start();
 
@@ -84,7 +96,7 @@ public class Main {
                     FileWriter preambleTrn = null;
 
                     try{
-                        traceTrn = new FileWriter(folderTraces.concat("\\").concat(nameModel).concat(Integer.toString(i)).concat("Trace.trn"));
+                        traceTrn = new FileWriter(folderTraces.concat("/").concat(nameModel).concat(Integer.toString(i)).concat("Trace.trn"));
 
                         TranslationVisitor eval = new TranslationVisitor(channels);
                         traceTrn.write(eval.visit(tree));

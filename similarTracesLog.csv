@@ -1,6 +1,6 @@
-No Bisimilar, ccn1.xml-tadSyncid8id2.xml
-No Bisimilar, ccn1.xml-tadSyncid8id4.xml
-No Bisimilar, ccn1.xml-tmi2.xml
-No Bisimilar, tadSyncid8id2.xml-tadSyncid8id4.xml
-Bisimilar, tadSyncid8id2.xml-tmi2.xml
-No Bisimilar, tadSyncid8id4.xml-tmi2.xml
+Bisimilar, tadSyncid8id4.xml-tmi2.xml
+Bisimilar, tadSyncid8id4.xml-ccn1.xml
+Bisimilar, tadSyncid8id4.xml-tadSyncid8id2.xml
+Bisimilar, tmi2.xml-ccn1.xml
+Bisimilar, tmi2.xml-tadSyncid8id2.xml
+Bisimilar, ccn1.xml-tadSyncid8id2.xml

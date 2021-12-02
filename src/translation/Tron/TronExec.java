@@ -9,9 +9,19 @@ public class TronExec {
 
 
         try{
-            String cmd = "\"C:\\Users\\Jaime\\OneDrive - correounivalle.edu.co\\Documentos\\uppaal-tron-1.5-win32\\tron.exe\" ".concat(model).concat(" -Q log -I TraceAdapter -- -m preamble.trn\"");
+            //String cmd = "  /home/jaime/Downloads/uppaal-tron-1.5-linux/tron  ".concat(model).concat(" -Q log -I TraceAdapter -- -m preamble.trn\"");
 
-            ProcessBuilder pb = new ProcessBuilder(cmd);
+            ProcessBuilder pb = new ProcessBuilder(
+                    "/home/jaime/Downloads/uppaal-tron-1.5-linux/tron",
+                    model,
+                    "-Q",
+                    "log",
+                    "-I",
+                    "TraceAdapter",
+                    "--",
+                    "-m",
+                    "preamble.trn"
+            );
             pb.redirectInput(new File(trace));
             pb.redirectErrorStream(true);
             Process p = null;
@@ -22,8 +32,6 @@ public class TronExec {
 
             String line = null;
 
-            System.out.println(cmd);
-            System.out.println(trace);
 
             while ((line = stdInput.readLine()) != null) {
                 System.out.println(line);
@@ -45,11 +53,11 @@ public class TronExec {
 
     public boolean checkModels(String pathFolder, String nameModel1, String nameModel2, String folderTraces, int nTraces ) {
 
-        String model1 = pathFolder.concat("\\").concat(nameModel1);
+        String model1 = pathFolder.concat("/").concat(nameModel1);
 
         if (simulationTraces(model1, nameModel2, nTraces, folderTraces)) return false;
 
-        String model2 = pathFolder.concat("\\").concat(nameModel2);
+        String model2 = pathFolder.concat("/").concat(nameModel2);
 
         return !simulationTraces(model2, nameModel1, nTraces, folderTraces);
     }

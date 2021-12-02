@@ -1,4 +1,4 @@
 input ;
-output new(), syncTime(), lower(), down();
+output new(), old(), lower(), down();
 precision 1000;
-timeout 22000;
+timeout 1000;

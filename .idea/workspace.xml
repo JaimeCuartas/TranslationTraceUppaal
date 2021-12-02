@@ -2,17 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb12b95c-9f22-448a-84dd-90dfff72a00c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Train-Gate-Controller/mut/mut/ccn1.xml0Trace.trn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Train-Gate-Controller/mut/mut/ccn1.xml1Trace.trn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Train-Gate-Controller/mut/mut/ccn1.xml2Trace.trn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Train-Gate-Controller/mut/mut/ccn1.xml3Trace.trn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Train-Gate-Controller/mut/mut/tadSyncid8id2.xml0Trace.trn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Train-Gate-Controller/mut/mut/tadSyncid8id2.xml1Trace.trn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Train-Gate-Controller/mut/mut/tadSyncid8id2.xml2Trace.trn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Train-Gate-Controller/mut/mut/tadSyncid8id2.xml3Trace.trn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Train-Gate-Controller/mut/mut/tadSyncid8id4.xml0Trace.trn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Train-Gate-Controller/mut/mut/tadSyncid8id4.xml1Trace.trn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Train-Gate-Controller/mut/mut/tadSyncid8id4.xml2Trace.trn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Train-Gate-Controller/mut/mut/tadSyncid8id4.xml3Trace.trn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Train-Gate-Controller/mut/mut/tmi2.xml0Trace.trn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Train-Gate-Controller/mut/mut/tmi2.xml1Trace.trn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Train-Gate-Controller/mut/mut/tmi2.xml2Trace.trn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Train-Gate-Controller/mut/mut/tmi2.xml3Trace.trn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carpetaMut/ccn1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/carpetaMut/tadSyncid8id2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/carpetaMut/tadSyncid8id4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/carpetaMut/tmi2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mut/ccn1.xml0Trace.trn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mut/tadSyncid8id2.xml0Trace.trn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mut/tadSyncid8id4.xml0Trace.trn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mut/tmi2.xml0Trace.trn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/translation/Main/Main1Trace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/translation/Main/Main1Trace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Main/Main1Trace.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Main/Main1Trace.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Tron/TronExec.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Tron/TronExec.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preamble.trn" beforeDir="false" afterPath="$PROJECT_DIR$/preamble.trn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similarTraces.csv" beforeDir="false" afterPath="$PROJECT_DIR$/similarTraces.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/similarTracesLog.csv" beforeDir="false" afterPath="$PROJECT_DIR$/similarTracesLog.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/translation/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/translation/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/translation/Tron/TronExec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/translation/Tron/TronExec.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +52,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="205LUXPU2I5Q3H4tOZpGaKzVtSS" />
   <component name="ProjectLevelVcsManager">
@@ -65,7 +83,7 @@
       <recent name="translation.Main" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main1Trace">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="translation.Main.Main" />
       <module name="TranslationTraceUppaal" />
@@ -120,9 +138,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main1Trace" />
         <item itemvalue="Application.Main1TraceRun" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main2" />
       </list>
     </recent_temporary>
@@ -173,6 +191,7 @@
       <workItem from="1638348580353" duration="7887000" />
       <workItem from="1638435078638" duration="1694000" />
       <workItem from="1638456334059" duration="1449000" />
+      <workItem from="1638460045397" duration="2709000" />
     </task>
     <servers />
   </component>
@@ -184,14 +203,35 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="Jaime" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.io.IOException" package="java.io" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
