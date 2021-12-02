@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
+<nta>
+<declaration>broadcast chan syncTime , new , old , raise , lower , up , down ;
+clock yr ;
+clock t ;
+</declaration>
+<template>
+<name x="5" y="5">Template</name>
+<declaration></declaration>
+<location id="id0" x="-192" y="64">
+<name x="-232" y="56">H1</name>
+<label kind="exponentialrate" x="-202" y="98">1</label>
+</location>
+<location id="id1" x="-32" y="64">
+<name x="-8" y="48">H2</name>
+<label kind="exponentialrate" x="-42" y="98">1</label>
+</location>
+<location id="id2" x="-64" y="288">
+<name x="-104" y="280">G2</name>
+<label kind="exponentialrate" x="-74" y="322">1</label>
+</location>
+<location id="id3" x="160" y="288">
+<name x="184" y="272">G1</name>
+<label kind="exponentialrate" x="150" y="322">1</label>
+</location>
+<location id="id4" x="64" y="160">
+<name x="54" y="130">G3</name>
+<label kind="exponentialrate" x="54" y="194">1</label>
+</location>
+<location id="id5" x="-64" y="160">
+<name x="-96" y="152">H</name>
+<label kind="exponentialrate" x="-74" y="194">1</label>
+</location>
+<location id="id6" x="352" y="160">
+<name x="342" y="130">F1</name>
+<label kind="exponentialrate" x="348" y="178">1</label>
+</location>
+<location id="id7" x="161" y="161">
+<name x="151" y="131">G</name>
+<label kind="exponentialrate" x="151" y="195">1</label>
+</location>
+<location id="id8" x="160" y="32">
+<name x="150" y="2">F2</name>
+<label kind="exponentialrate" x="150" y="66">1</label>
+</location>
+<location id="id9" x="48" y="-64">
+<name x="38" y="-94">E3</name>
+<label kind="exponentialrate" x="38" y="-30">1</label>
+</location>
+<location id="id10" x="153" y="-68">
+<name x="143" y="-98">F</name>
+<label kind="exponentialrate" x="143" y="-34">1</label>
+</location>
+<location id="id11" x="153" y="-221">
+<name x="143" y="-251">E2</name>
+<label kind="exponentialrate" x="143" y="-187">1</label>
+</location>
+<location id="id12" x="-64" y="-224">
+<name x="-74" y="-254">E1</name>
+<label kind="exponentialrate" x="-74" y="-190">1</label>
+</location>
+<location id="id13" x="-64" y="-64">
+<name x="-74" y="-94">E</name>
+<label kind="exponentialrate" x="-74" y="-30">1</label>
+</location>
+<init ref="id13"/>
+<transition>
+<source ref="id11"/>
+<target ref="id6"/>
+</transition>
+<transition>
+<source ref="id0"/>
+<target ref="id13"/>
+<label kind="synchronisation" x="-188" y="-15">up!</label>
+<label kind="guard" x="-238" y="-42">yr &gt; 10 and yr &lt; 30</label>
+</transition>
+<transition>
+<source ref="id5"/>
+<target ref="id0"/>
+<label kind="synchronisation" x="-168" y="112">new?</label>
+</transition>
+<transition>
+<source ref="id1"/>
+<target ref="id13"/>
+<label kind="synchronisation" x="-24" y="0">up!</label>
+<label kind="guard" x="-42" y="-25">yr &gt; 20 and yr &lt; 40</label>
+</transition>
+<transition>
+<source ref="id5"/>
+<target ref="id1"/>
+<label kind="synchronisation" x="-40" y="104">old?</label>
+</transition>
+<transition>
+<source ref="id4"/>
+<target ref="id5"/>
+<label kind="synchronisation" x="-8" y="144">raise?</label>
+<label kind="assignment" x="-8" y="159">yr=0</label>
+</transition>
+<transition>
+<source ref="id7"/>
+<target ref="id4"/>
+<label kind="synchronisation" x="96" y="144">old?</label>
+</transition>
+<transition>
+<source ref="id2"/>
+<target ref="id5"/>
+<label kind="synchronisation" x="-124" y="209">raise?</label>
+<label kind="assignment" x="-124" y="224">yr=0</label>
+</transition>
+<transition>
+<source ref="id3"/>
+<target ref="id2"/>
+<label kind="synchronisation" x="8" y="272">syncTime?</label>
+</transition>
+<transition>
+<source ref="id7"/>
+<target ref="id3"/>
+<label kind="synchronisation" x="100" y="209">new?</label>
+<label kind="assignment" x="100" y="224">yr=0</label>
+</transition>
+<transition>
+<source ref="id10"/>
+<target ref="id6"/>
+<label kind="synchronisation" x="264" y="32">new?</label>
+</transition>
+<transition>
+<source ref="id6"/>
+<target ref="id7"/>
+<label kind="synchronisation" x="196" y="145">down!</label>
+<label kind="guard" x="196" y="130">yr &gt; 20 and yr &lt; 40</label>
+</transition>
+<transition>
+<source ref="id8"/>
+<target ref="id7"/>
+<label kind="synchronisation" x="100" y="81">down!</label>
+<label kind="guard" x="100" y="66">yr &gt; 20 and yr &lt; 40</label>
+</transition>
+<transition>
+<source ref="id10"/>
+<target ref="id8"/>
+<label kind="synchronisation" x="128" y="-24">old?</label>
+</transition>
+<transition>
+<source ref="id9"/>
+<target ref="id10"/>
+<label kind="synchronisation" x="80" y="-80">lower?</label>
+<label kind="assignment" x="88" y="-64">yr=0</label>
+</transition>
+<transition>
+<source ref="id13"/>
+<target ref="id9"/>
+<label kind="synchronisation" x="-24" y="-80">old?</label>
+</transition>
+<transition>
+<source ref="id11"/>
+<target ref="id10"/>
+<label kind="synchronisation" x="100" y="-159">lower?</label>
+<label kind="assignment" x="100" y="-144">yr=0</label>
+</transition>
+<transition>
+<source ref="id12"/>
+<target ref="id11"/>
+<label kind="synchronisation" x="-12" y="-239">syncTime?</label>
+</transition>
+<transition>
+<source ref="id13"/>
+<target ref="id12"/>
+<label kind="synchronisation" x="-124" y="-159">new?</label>
+<label kind="assignment" x="-124" y="-144">yr=0</label>
+</transition>
+</template>
+<template>
+<name>Obs</name>
+<location id="id14" x="0" y="0">
+<label kind="exponentialrate" x="-10" y="34">1</label>
+</location>
+<init ref="id14"/>
+<transition>
+<source ref="id14"/>
+<target ref="id14"/>
+<label kind="synchronisation" x="25" y="34">down?</label>
+<nail  x="17" y="42"/>
+<nail  x="25" y="25"/>
+</transition>
+<transition>
+<source ref="id14"/>
+<target ref="id14"/>
+<label kind="synchronisation" x="34" y="17">raise!</label>
+<nail  x="34" y="8"/>
+<nail  x="34" y="25"/>
+</transition>
+<transition>
+<source ref="id14"/>
+<target ref="id14"/>
+<label kind="synchronisation" x="-51" y="25">old!</label>
+<nail  x="-25" y="25"/>
+<nail  x="-34" y="8"/>
+</transition>
+<transition>
+<source ref="id14"/>
+<target ref="id14"/>
+<label kind="synchronisation" x="-76" y="-8">new!</label>
+<nail  x="-34" y="0"/>
+<nail  x="-34" y="-25"/>
+</transition>
+<transition>
+<source ref="id14"/>
+<target ref="id14"/>
+<label kind="synchronisation" x="42" y="-17">lower!</label>
+<nail  x="34" y="0"/>
+<nail  x="34" y="-25"/>
+</transition>
+<transition>
+<source ref="id14"/>
+<target ref="id14"/>
+<label kind="synchronisation" x="-25" y="34">up?</label>
+<nail  x="-17" y="34"/>
+<nail  x="0" y="42"/>
+</transition>
+<transition>
+<source ref="id14"/>
+<target ref="id14"/>
+<label kind="synchronisation" x="-12" y="-38">syncTime!</label>
+<nail  x="-25" y="-42"/>
+<nail  x="17" y="-42"/>
+</transition>
+</template>
+<system>// Place template instantiations here.
+Process = Template();
+
+// List one or more processes to be composed into a system.
+system Process, Obs;</system>
+<queries>
+<query>
+<formula>simulate [&lt;=100; 1] {t} </formula>
+<comment></comment>
+</query>
+</queries>
+</nta>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
+<nta>
+	<declaration>// Place global declarations here.
+</declaration>
+	<template>
+		<name x="5" y="5">Template</name>
+		<declaration>// Place local declarations here.
+</declaration>
+		<location id="id0" x="-192" y="64">
+			<name x="-232" y="56">H1</name>
+		</location>
+		<location id="id1" x="-32" y="64">
+			<name x="-8" y="48">H2</name>
+		</location>
+		<location id="id2" x="-64" y="288">
+			<name x="-104" y="280">G2</name>
+		</location>
+		<location id="id3" x="160" y="288">
+			<name x="184" y="272">G1</name>
+		</location>
+		<location id="id4" x="64" y="160">
+			<name x="54" y="130">G3</name>
+		</location>
+		<location id="id5" x="-64" y="160">
+			<name x="-96" y="152">H</name>
+		</location>
+		<location id="id6" x="352" y="160">
+			<name x="342" y="130">F1</name>
+		</location>
+		<location id="id7" x="160" y="160">
+			<name x="150" y="130">G</name>
+		</location>
+		<location id="id8" x="160" y="32">
+			<name x="150" y="2">F2</name>
+		</location>
+		<location id="id9" x="48" y="-64">
+			<name x="38" y="-94">E3</name>
+		</location>
+		<location id="id10" x="160" y="-64">
+			<name x="150" y="-94">F</name>
+		</location>
+		<location id="id11" x="160" y="-224">
+			<name x="150" y="-254">E2</name>
+		</location>
+		<location id="id12" x="-64" y="-224">
+			<name x="-74" y="-254">E1</name>
+		</location>
+		<location id="id13" x="-64" y="-64">
+			<name x="-74" y="-94">E</name>
+		</location>
+		<init ref="id13"/>
+		<transition>
+			<source ref="id0"/>
+			<target ref="id13"/>
+			<label kind="guard" x="-188" y="-30">yr&gt;10,yr&lt;30</label>
+			<label kind="synchronisation" x="-188" y="-15">up!</label>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id0"/>
+			<label kind="synchronisation" x="-168" y="112">new?</label>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id13"/>
+			<label kind="guard" x="-56" y="-16">yr&gt;20,yr&lt;40</label>
+			<label kind="synchronisation" x="-24" y="0">up!</label>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id1"/>
+			<label kind="synchronisation" x="-40" y="104">old?</label>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id5"/>
+			<label kind="synchronisation" x="-8" y="144">raise?</label>
+			<label kind="assignment" x="-8" y="159">yr=0</label>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id4"/>
+			<label kind="synchronisation" x="96" y="144">old?</label>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id5"/>
+			<label kind="synchronisation" x="-124" y="209">raise?</label>
+			<label kind="assignment" x="-124" y="224">yr=0</label>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id2"/>
+			<label kind="synchronisation" x="8" y="272">syncTime?</label>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id3"/>
+			<label kind="synchronisation" x="100" y="209">new?</label>
+			<label kind="assignment" x="100" y="224">yr=0</label>
+		</transition>
+		<transition>
+			<source ref="id10"/>
+			<target ref="id6"/>
+			<label kind="synchronisation" x="264" y="32">new?</label>
+		</transition>
+		<transition>
+			<source ref="id6"/>
+			<target ref="id7"/>
+			<label kind="guard" x="196" y="130">yr&gt;20,yr&lt;40</label>
+			<label kind="synchronisation" x="196" y="145">down!</label>
+		</transition>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id7"/>
+			<label kind="guard" x="100" y="66">yr &gt; 20, yr &lt; 40</label>
+			<label kind="synchronisation" x="100" y="81">down!</label>
+		</transition>
+		<transition>
+			<source ref="id10"/>
+			<target ref="id8"/>
+			<label kind="synchronisation" x="128" y="-24">old?</label>
+		</transition>
+		<transition>
+			<source ref="id9"/>
+			<target ref="id10"/>
+			<label kind="synchronisation" x="80" y="-80">lower?</label>
+			<label kind="assignment" x="88" y="-64">yr=0</label>
+		</transition>
+		<transition>
+			<source ref="id13"/>
+			<target ref="id9"/>
+			<label kind="synchronisation" x="-24" y="-80">old?</label>
+		</transition>
+		<transition>
+			<source ref="id11"/>
+			<target ref="id10"/>
+			<label kind="synchronisation" x="100" y="-159">lower?</label>
+			<label kind="assignment" x="100" y="-144">yr=0</label>
+		</transition>
+		<transition>
+			<source ref="id12"/>
+			<target ref="id11"/>
+			<label kind="synchronisation" x="-12" y="-239">syncTime?</label>
+		</transition>
+		<transition>
+			<source ref="id13"/>
+			<target ref="id12"/>
+			<label kind="synchronisation" x="-124" y="-159">new?</label>
+			<label kind="assignment" x="-124" y="-144">yr=0</label>
+		</transition>
+	</template>
+	<system>// Place template instantiations here.
+Process = Template();
+
+// List one or more processes to be composed into a system.
+system Process;</system>
+	<queries>
+		<query>
+			<formula></formula>
+			<comment></comment>
+		</query>
+	</queries>
+</nta>
