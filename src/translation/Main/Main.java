@@ -58,7 +58,6 @@ public class Main {
 
             for(int i =0; i<nTraces; i++){
                 try{
-                    //String cmd = "bash ".concat(verifyTA).concat(" -q -t 0 ").concat(fullNameModel).concat(" ").concat(prop).concat("\"");
                     ProcessBuilder pb = new ProcessBuilder(
                             "bash",
                             verifyTA,

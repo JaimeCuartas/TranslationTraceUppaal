@@ -2,32 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb12b95c-9f22-448a-84dd-90dfff72a00c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Train-Gate-Controller/mut/mut/ccn1.xml0Trace.trn" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Train-Gate-Controller/mut/mut/ccn1.xml1Trace.trn" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Train-Gate-Controller/mut/mut/ccn1.xml2Trace.trn" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Train-Gate-Controller/mut/mut/ccn1.xml3Trace.trn" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Train-Gate-Controller/mut/mut/tadSyncid8id2.xml0Trace.trn" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Train-Gate-Controller/mut/mut/tadSyncid8id2.xml1Trace.trn" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Train-Gate-Controller/mut/mut/tadSyncid8id2.xml2Trace.trn" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Train-Gate-Controller/mut/mut/tadSyncid8id2.xml3Trace.trn" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Train-Gate-Controller/mut/mut/tadSyncid8id4.xml0Trace.trn" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Train-Gate-Controller/mut/mut/tadSyncid8id4.xml1Trace.trn" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Train-Gate-Controller/mut/mut/tadSyncid8id4.xml2Trace.trn" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Train-Gate-Controller/mut/mut/tadSyncid8id4.xml3Trace.trn" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Train-Gate-Controller/mut/mut/tmi2.xml0Trace.trn" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Train-Gate-Controller/mut/mut/tmi2.xml1Trace.trn" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Train-Gate-Controller/mut/mut/tmi2.xml2Trace.trn" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Train-Gate-Controller/mut/mut/tmi2.xml3Trace.trn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Main/Main1Trace.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Main/Main1Trace.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Tron/TronExec.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TranslationTraceUppaal/translation/Tron/TronExec.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preamble.trn" beforeDir="false" afterPath="$PROJECT_DIR$/preamble.trn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similarTraces.csv" beforeDir="false" afterPath="$PROJECT_DIR$/similarTraces.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/similarTracesLog.csv" beforeDir="false" afterPath="$PROJECT_DIR$/similarTracesLog.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/translation/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/translation/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/translation/Tron/TronExec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/translation/Tron/TronExec.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,6 +168,8 @@
       <workItem from="1638435078638" duration="1694000" />
       <workItem from="1638456334059" duration="1449000" />
       <workItem from="1638460045397" duration="2709000" />
+      <workItem from="1638533737470" duration="147000" />
+      <workItem from="1638539049930" duration="761000" />
     </task>
     <servers />
   </component>
