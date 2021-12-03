@@ -29,7 +29,6 @@ public class Main {
         final String[] pathnames = file.list();
 
 
-
         String pathFolder = file.getAbsolutePath();
 
         assert pathnames != null;
