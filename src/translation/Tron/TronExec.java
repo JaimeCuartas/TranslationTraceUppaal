@@ -33,15 +33,19 @@ public class TronExec {
             String line = null;
 
 
+            String exec = "";
             while ((line = stdInput.readLine()) != null) {
-                System.out.println(line);
-
+                //System.out.println(line);
+                exec=exec.concat(line);
                 if(line.contains("TEST PASSED")){
                     System.out.println("TEST PASSED");
                     return true;
                 }
             }
 
+            System.out.println(model);
+            System.out.println(trace);
+            System.out.println(exec);
             System.out.println("NOT PASSED");
 
         } catch (IOException | InterruptedException e) {

@@ -22,7 +22,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String mutantsFolder = "/home/jaime/Downloads/TranslationTraceUppaal/Train-Gate-Controller/carpetaMut";
+        String mutantsFolder = "/home/jaime/Documents/trainMutantsSub30/";
+        //String mutantsFolder = "/home/jaime/Documents/TranslationTraceUppaal/Train-Gate-Controller/carpetaMut/";
 
 
         File file = new File(mutantsFolder);
@@ -35,9 +36,10 @@ public class Main {
         int nModels = pathnames.length;
 
         Set<String> channels = new HashSet<>();
+        float timeout = 0;
 
-        String prop = "/home/jaime/Downloads/TranslationTraceUppaal/Train-Gate-Controller/prop.q";
-        String folderTraces = "/home/jaime/Downloads/TranslationTraceUppaal/Train-Gate-Controller/mut/mut/";
+        String prop = "/home/jaime/Documents/TranslationTraceUppaal/Train-Gate-Controller/prop.q";
+        String folderTraces = "/home/jaime/Documents/TranslationTraceUppaal/Train-Gate-Controller/traces/";
         String verifyTA = "/home/jaime/Downloads/uppaal64-4.1.25-5/bin-Linux/verifyta";
 
         try{
@@ -57,6 +59,8 @@ public class Main {
 
             for(int i =0; i<nTraces; i++){
                 try{
+
+                    System.out.println(fullNameModel);
                     ProcessBuilder pb = new ProcessBuilder(
                             "bash",
                             verifyTA,
@@ -93,12 +97,21 @@ public class Main {
                     FileWriter traceTrn = null;
                     FileWriter preambleTrn = null;
 
+
                     try{
                         traceTrn = new FileWriter(folderTraces.concat("/").concat(nameModel).concat(Integer.toString(i)).concat("Trace.trn"));
 
                         TranslationVisitor eval = new TranslationVisitor(channels);
+
                         traceTrn.write(eval.visit(tree));
                         traceTrn.close();
+
+                        float newTimeout = eval.getTimeout();
+
+                        if(newTimeout>timeout){
+                            timeout=newTimeout;
+                        }
+
                     }catch (Exception e){
                         e.printStackTrace();
                     }
@@ -113,7 +126,7 @@ public class Main {
         try{
             FileWriter traceTrn = new FileWriter("preamble.trn");
 
-            Preamble preamble = new Preamble(channels, "1000", "1000");
+            Preamble preamble = new Preamble(channels, "1000", Integer.toString(Math.round(timeout) + 1));
             traceTrn.write(preamble.getPreamble());
             traceTrn.close();
         }catch (Exception e){
@@ -155,12 +168,16 @@ public class Main {
                     outLog.print("Bisimilar, ");
                     outLog.print(pathnames[i].concat("-").concat(pathnames[j]));
                     outLog.print("\n");
+                    System.out.println("Bisimilar");
+                    System.out.println(pathnames[i].concat("-").concat(pathnames[j]));
                     bisimilar.add(pathnames[i].concat("-").concat(pathnames[j]));
                 }
                 else{
                     outLog.print("No Bisimilar, ");
                     outLog.print(pathnames[i].concat("-").concat(pathnames[j]));
                     outLog.print("\n");
+                    System.out.println("No Bisimilar");
+                    System.out.println(pathnames[i].concat("-").concat(pathnames[j]));
                     noBisimilar.add(pathnames[i].concat("-").concat(pathnames[j]));
                 }
 

@@ -12,9 +12,15 @@ import java.util.Set;
 public class TranslationVisitor extends TraceUppaalParserBaseVisitor<String> {
 
     private final Set<String> channels;
+    private float timeout;
 
     public TranslationVisitor(Set<String> channels){
+        this.timeout = 0;
         this.channels = channels;
+    }
+
+    public float getTimeout(){
+        return this.timeout;
     }
 
     public Set<String> getChannels() {
@@ -65,9 +71,12 @@ public class TranslationVisitor extends TraceUppaalParserBaseVisitor<String> {
         String delayString = ctx.POINT().toString();
         double delayDouble = Double.parseDouble(delayString);
 
+
         //DecimalFormat dFormat = new DecimalFormat("#.####");
         //delayString = dFormat.format(delayDouble);
         delayString = String.format(Locale.US, "%.4f", delayDouble);
+
+        this.timeout += Float.parseFloat(delayString);
 
         return "delay ".concat(delayString).concat(";\n");
     }
