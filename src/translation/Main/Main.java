@@ -22,7 +22,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String mutantsFolder = "/home/jaime/Documents/trainMutantsSub30/";
+        String mutantsFolder = "/home/jaime/Documents/trainMutantsIndividual/";
         //String mutantsFolder = "/home/jaime/Documents/TranslationTraceUppaal/Train-Gate-Controller/carpetaMut/";
 
 
@@ -40,7 +40,7 @@ public class Main {
 
         String prop = "/home/jaime/Documents/TranslationTraceUppaal/Train-Gate-Controller/prop.q";
         String folderTraces = "/home/jaime/Documents/TranslationTraceUppaal/Train-Gate-Controller/traces/";
-        String verifyTA = "/home/jaime/Downloads/uppaal64-4.1.25-5/bin-Linux/verifyta";
+        String verifyTA = "/home/jaime/Downloads/uppaal64-4.1.26/bin-Linux/verifyta";
 
         try{
             File theDir = new File(folderTraces);
@@ -52,9 +52,11 @@ public class Main {
         }
 
 
-        int nTraces = 4;
+        int nTraces = 10;
 
+        Random rand = new Random();
         for(String nameModel: pathnames){
+
             String fullNameModel = pathFolder.concat("/").concat(nameModel);
 
             for(int i =0; i<nTraces; i++){
@@ -67,6 +69,8 @@ public class Main {
                             "-q",
                             "-t",
                             "0",
+                            "-r",
+                            Integer.toString(rand.nextInt()),
                             fullNameModel,
                             prop
                     );
@@ -157,7 +161,8 @@ public class Main {
         PrintWriter outLog = new PrintWriter(fwLog, true);
 
 
-
+        long startTime = System.nanoTime();
+        
 
         for(int i = 0; i<nModels; i++){
 
@@ -183,6 +188,13 @@ public class Main {
 
             }
         }
+
+        long endTime = System.nanoTime();
+
+        long duration = (endTime - startTime);  //divide by 1000000 to get milliseconds.
+
+
+        outLog.print(duration);
 
         //Flush the output to the file
         outLog.flush();
