@@ -1,5 +1,7 @@
 package translation.Tron;
 
+import translation.Main.Simulation;
+
 import java.io.*;
 
 public class TronExec {
@@ -55,25 +57,44 @@ public class TronExec {
         return false;
     }
 
-    public boolean checkModels(String pathFolder, String nameModel1, String nameModel2, String folderTraces, int nTraces ) {
+    public Simulation checkModels(String pathFolder, String nameModel1, String nameModel2, String folderTraces, int nTraces ) {
+
+        long timeStart = System.currentTimeMillis();
 
         String model1 = pathFolder.concat("/").concat(nameModel1);
 
-        if (simulationTraces(model1, nameModel2, nTraces, folderTraces)) return false;
+        Simulation simulation = new Simulation();
+
+        simulationTraces(simulation, model1, nameModel2, nTraces, folderTraces);
+
+        if (!simulation.isSimilar()) {
+            long timeFinish = System.currentTimeMillis();
+            long timeCheck = timeFinish - timeStart;
+            simulation.setTime(timeCheck);
+            return simulation;
+        }
 
         String model2 = pathFolder.concat("/").concat(nameModel2);
 
-        return !simulationTraces(model2, nameModel1, nTraces, folderTraces);
+        simulationTraces(simulation, model2, nameModel1, nTraces, folderTraces);
+
+        long timeFinish = System.currentTimeMillis();
+        long timeCheck = timeFinish - timeStart;
+        simulation.setTime(timeCheck);
+        return simulation;
     }
 
-    private boolean simulationTraces(String model, String nameModel, int nTraces, String folderTraces) {
+    //Increase the number of checked traces and set "similar" into false in case some trace can not be simulated
+
+    private void simulationTraces(Simulation simulation, String model, String nameModel, int nTraces, String folderTraces) {
         for(int k = 0; k<nTraces; k++){
             String trace = folderTraces.concat(nameModel).concat(Integer.toString(k)).concat("Trace.trn");
             boolean passComplete = this.checkTrace(model, trace);
+            simulation.increaseNCheckdTraces();
             if(!passComplete){
-                return true;
+                simulation.setSimilar();
+                return;
             }
         }
-        return false;
     }
 }

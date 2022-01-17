@@ -181,14 +181,23 @@ public class Main {
 
             for(int j =i+1; j<nModels; j++){
 
-                boolean passComplete = new TronExec().checkModels(pathFolder, pathnames[i], pathnames[j], folderTraces, nTraces);
-                if(passComplete){
+
+                Simulation passComplete = new TronExec().checkModels(pathFolder, pathnames[i], pathnames[j], folderTraces, nTraces);
+                if(passComplete.isSimilar()){
                     outLog.print("Bisimilar, ");
                     outLog.print(pathnames[i].concat("-").concat(pathnames[j]));
                     outLog.print("\n");
                     System.out.println("Bisimilar");
                     System.out.println(pathnames[i].concat("-").concat(pathnames[j]));
-                    bisimilar.add(pathnames[i].concat("-").concat(pathnames[j]));
+
+                    bisimilar.add(
+                            pathnames[i].concat(", ").
+                                    concat(pathnames[j]).
+                                    concat(", ").
+                                    concat(String.valueOf(passComplete.getTime())).
+                                    concat(", ").
+                                    concat(String.valueOf(passComplete.getnCheckedTraces()))
+                    );
                 }
                 else{
                     outLog.print("No Bisimilar, ");
@@ -196,7 +205,14 @@ public class Main {
                     outLog.print("\n");
                     System.out.println("No Bisimilar");
                     System.out.println(pathnames[i].concat("-").concat(pathnames[j]));
-                    noBisimilar.add(pathnames[i].concat("-").concat(pathnames[j]));
+                    noBisimilar.add(
+                            pathnames[i].concat(", ").
+                                    concat(pathnames[j]).
+                                    concat(", ").
+                                    concat(String.valueOf(passComplete.getTime())).
+                                    concat(", ").
+                                    concat(String.valueOf(passComplete.getnCheckedTraces()))
+                    );
                 }
 
             }

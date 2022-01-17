@@ -3,13 +3,15 @@ package translation.Main;
 public class Simulation {
     private int nCheckedTraces;
     private boolean similar;
-    private int time;
+    private long time;
 
-    public Simulation(int nCheckedTraces, boolean similar, int time) {
-        this.nCheckedTraces = nCheckedTraces;
-        this.similar = similar;
-        this.time = time;
+    public Simulation (){
+        this.nCheckedTraces = 0;
+        this.similar = true;
+        this.time = 0;
     }
+
+
 
     public int getnCheckedTraces() {
         return nCheckedTraces;
@@ -19,8 +21,20 @@ public class Simulation {
         return similar;
     }
 
-    public int getTime() {
+    public long getTime() {
         return time;
+    }
+
+    public void increaseNCheckdTraces(){
+        this.nCheckedTraces += 1;
+    }
+
+    public void setSimilar(){
+        this.similar = false;
+    }
+
+    public void setTime(long time){
+        this.time = time;
     }
 }
 
