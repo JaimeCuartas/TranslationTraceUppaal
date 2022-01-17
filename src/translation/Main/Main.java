@@ -22,7 +22,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String mutantsFolder = "/home/jaime/Documents/trainMutantsIndividual/";
+        long timeInit = System.currentTimeMillis();
+
+        String mutantsFolder = "/home/jaime/Documents/TranslationTraceUppaal/Train-Gate-Controller/mutNoUniform/";
         //String mutantsFolder = "/home/jaime/Documents/TranslationTraceUppaal/Train-Gate-Controller/carpetaMut/";
 
 
@@ -52,7 +54,7 @@ public class Main {
         }
 
 
-        int nTraces = 10;
+        int nTraces = 2;
 
         Random rand = new Random();
         for(String nameModel: pathnames){
@@ -101,6 +103,14 @@ public class Main {
                     FileWriter traceTrn = null;
                     FileWriter preambleTrn = null;
 
+                    try{
+                        FileWriter fileTraceString = new FileWriter("/home/jaime/Desktop/tracesSim/".concat(nameModel).concat(Integer.toString(i)));
+                        fileTraceString.write(traceString);
+                        fileTraceString.close();
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+
 
                     try{
                         traceTrn = new FileWriter(folderTraces.concat("/").concat(nameModel).concat(Integer.toString(i)).concat("Trace.trn"));
@@ -137,14 +147,17 @@ public class Main {
             e.printStackTrace();
         }
 
+        long timeFinishTraces = System.currentTimeMillis();
 
+        long durationTraces = timeFinishTraces - timeInit;
 
+/*
         // This data needs to be written (Object[])
         //Map<String, Object[]> traceData = new TreeMap<String, Object[]>();
         ArrayList<Object[]> traceData = new ArrayList<>();
 
         traceData.add(new Object[]{"Modelo1", "Modelo2", "Bisimilar?"});
-
+*/
         ArrayList<String> bisimilar = new ArrayList<>();
         ArrayList<String> noBisimilar = new ArrayList<>();
 
@@ -161,7 +174,7 @@ public class Main {
         PrintWriter outLog = new PrintWriter(fwLog, true);
 
 
-        long startTime = System.nanoTime();
+        long startTime = System.currentTimeMillis();
         
 
         for(int i = 0; i<nModels; i++){
@@ -189,12 +202,13 @@ public class Main {
             }
         }
 
-        long endTime = System.nanoTime();
+        long endTime = System.currentTimeMillis();
 
-        long duration = (endTime - startTime);  //divide by 1000000 to get milliseconds.
+        long durationSimulation = (endTime - startTime);  //time simulations in milliseconds.
 
+        outLog.println("Duration traces: ".concat(String.valueOf(durationTraces)));
 
-        outLog.print(duration);
+        outLog.print("Duration simulation: ".concat(String.valueOf(durationSimulation)));
 
         //Flush the output to the file
         outLog.flush();

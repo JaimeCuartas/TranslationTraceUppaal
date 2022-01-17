@@ -6,7 +6,7 @@
         <PerGrammarGenerationSettings>
           <option name="fileName" value="$PROJECT_DIR$/src/translation/Antlr/TraceUppaalLexer.g4" />
           <option name="autoGen" value="true" />
-          <option name="outputDir" value="C:\Users\Jaime\OneDrive - correounivalle.edu.co\Documentos\Github\TranslationTraceUppaal\src" />
+          <option name="outputDir" value="$PROJECT_DIR$/src" />
           <option name="libDir" value="" />
           <option name="encoding" value="" />
           <option name="pkg" value="" />
@@ -16,7 +16,7 @@
         <PerGrammarGenerationSettings>
           <option name="fileName" value="$PROJECT_DIR$/src/translation/Antlr/TraceUppaalParser.g4" />
           <option name="autoGen" value="true" />
-          <option name="outputDir" value="C:\Users\Jaime\OneDrive - correounivalle.edu.co\Documentos\Github\TranslationTraceUppaal\src" />
+          <option name="outputDir" value="$PROJECT_DIR$/src" />
           <option name="libDir" value="" />
           <option name="encoding" value="" />
           <option name="pkg" value="" />

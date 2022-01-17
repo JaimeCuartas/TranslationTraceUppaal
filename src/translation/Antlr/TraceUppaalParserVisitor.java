@@ -1,4 +1,4 @@
-// Generated from C:/Users/Jaime/OneDrive - correounivalle.edu.co/Documentos/Github/TranslationTraceUppaal/src/translation/Antlr\TraceUppaalParser.g4 by ANTLR 4.9.1
+// Generated from /home/jaime/Documents/TranslationTraceUppaal/src/translation/Antlr/TraceUppaalParser.g4 by ANTLR 4.9.2
 package translation.Antlr;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -78,11 +78,23 @@ public interface TraceUppaalParserVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitGuard(TraceUppaalParser.GuardContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link TraceUppaalParser#action}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAction(TraceUppaalParser.ActionContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link TraceUppaalParser#sync}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitSync(TraceUppaalParser.SyncContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link TraceUppaalParser#tau}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTau(TraceUppaalParser.TauContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link TraceUppaalParser#update}.
 	 * @param ctx the parse tree

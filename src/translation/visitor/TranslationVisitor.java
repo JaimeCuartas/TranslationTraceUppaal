@@ -88,7 +88,7 @@ public class TranslationVisitor extends TraceUppaalParserBaseVisitor<String> {
 
     @Override
     public String visitADiscrete(TraceUppaalParser.ADiscreteContext ctx) {
-        String nameChan = visit(ctx.sync());
+        String nameChan = visit(ctx.action());
         String output = "output ".concat(nameChan).concat("();\n");
         this.channels.add(nameChan);
         return output;
@@ -97,6 +97,22 @@ public class TranslationVisitor extends TraceUppaalParserBaseVisitor<String> {
     @Override
     public String visitGuard(TraceUppaalParser.GuardContext ctx) {
         return super.visitGuard(ctx);
+    }
+
+    @Override
+    public String visitAction(TraceUppaalParser.ActionContext ctx){
+        if(ctx.tau()!=null){
+            return visit(ctx.tau());
+        }
+        if(ctx.sync()!=null){
+            return visit(ctx.sync());
+        }
+        return ctx.toString();
+    }
+
+    @Override
+    public String visitTau(TraceUppaalParser.TauContext ctx) {
+        return "tau";
     }
 
     @Override

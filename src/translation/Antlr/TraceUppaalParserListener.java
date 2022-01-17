@@ -1,4 +1,4 @@
-// Generated from C:/Users/Jaime/OneDrive - correounivalle.edu.co/Documentos/Github/TranslationTraceUppaal/src/translation/Antlr\TraceUppaalParser.g4 by ANTLR 4.9.1
+// Generated from /home/jaime/Documents/TranslationTraceUppaal/src/translation/Antlr/TraceUppaalParser.g4 by ANTLR 4.9.2
 package translation.Antlr;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -120,6 +120,16 @@ public interface TraceUppaalParserListener extends ParseTreeListener {
 	 */
 	void exitGuard(TraceUppaalParser.GuardContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link TraceUppaalParser#action}.
+	 * @param ctx the parse tree
+	 */
+	void enterAction(TraceUppaalParser.ActionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TraceUppaalParser#action}.
+	 * @param ctx the parse tree
+	 */
+	void exitAction(TraceUppaalParser.ActionContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link TraceUppaalParser#sync}.
 	 * @param ctx the parse tree
 	 */
@@ -129,6 +139,16 @@ public interface TraceUppaalParserListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitSync(TraceUppaalParser.SyncContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TraceUppaalParser#tau}.
+	 * @param ctx the parse tree
+	 */
+	void enterTau(TraceUppaalParser.TauContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TraceUppaalParser#tau}.
+	 * @param ctx the parse tree
+	 */
+	void exitTau(TraceUppaalParser.TauContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link TraceUppaalParser#update}.
 	 * @param ctx the parse tree
