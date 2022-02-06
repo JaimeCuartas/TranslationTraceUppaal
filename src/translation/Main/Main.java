@@ -54,7 +54,7 @@ public class Main {
         }
 
 
-        int nTraces = 2;
+        int nTraces = 5;
 
         Random rand = new Random();
         for(String nameModel: pathnames){
@@ -172,6 +172,8 @@ public class Main {
             e.printStackTrace();
         }
         PrintWriter outLog = new PrintWriter(fwLog, true);
+        PrintWriter outBisimilar = new PrintWriter(fwLog, true);
+        PrintWriter outNoBisimilar = new PrintWriter(fwLog, true);
 
 
         long startTime = System.currentTimeMillis();
