@@ -25,6 +25,9 @@ public class Main {
         long timeInit = System.currentTimeMillis();
 
         String mutantsFolder = "/home/jaime/Documents/TranslationTraceUppaal/Train-Gate-Controller/mutNoUniform/";
+        String folderSave = "Ejemploparaprobar";
+
+        int nTraces = 2;
         //String mutantsFolder = "/home/jaime/Documents/TranslationTraceUppaal/Train-Gate-Controller/carpetaMut/";
 
 
@@ -41,7 +44,7 @@ public class Main {
         float timeout = 0;
 
         String prop = "/home/jaime/Documents/TranslationTraceUppaal/Train-Gate-Controller/prop.q";
-        String folderTraces = "/home/jaime/Documents/TranslationTraceUppaal/Train-Gate-Controller/traces/";
+        String folderTraces = "/home/jaime/Documents/TranslationTraceUppaal/".concat(folderSave).concat("/").concat("traces/");
         String verifyTA = "/home/jaime/Downloads/uppaal64-4.1.26/bin-Linux/verifyta";
 
         try{
@@ -49,12 +52,15 @@ public class Main {
             if (!theDir.exists()){
                 theDir.mkdirs();
             }
+            File folderTracesSim = new File("/home/jaime/Documents/TranslationTraceUppaal/".concat(folderSave).concat("/tracesSim/"));
+            if(!folderTracesSim.exists()){
+                folderTracesSim.mkdirs();
+            }
+
         }catch (Exception e){
             e.printStackTrace();
         }
 
-
-        int nTraces = 5;
 
         Random rand = new Random();
         for(String nameModel: pathnames){
@@ -104,13 +110,12 @@ public class Main {
                     FileWriter preambleTrn = null;
 
                     try{
-                        FileWriter fileTraceString = new FileWriter("/home/jaime/Desktop/tracesSim/".concat(nameModel).concat(Integer.toString(i)));
+                        FileWriter fileTraceString = new FileWriter("/home/jaime/Documents/TranslationTraceUppaal/".concat(folderSave).concat("/tracesSim/".concat(nameModel).concat(Integer.toString(i))));
                         fileTraceString.write(traceString);
                         fileTraceString.close();
                     }catch (Exception e){
                         e.printStackTrace();
                     }
-
 
                     try{
                         traceTrn = new FileWriter(folderTraces.concat("/").concat(nameModel).concat(Integer.toString(i)).concat("Trace.trn"));
@@ -138,7 +143,7 @@ public class Main {
         }
 
         try{
-            FileWriter traceTrn = new FileWriter("preamble.trn");
+            FileWriter traceTrn = new FileWriter("/home/jaime/Documents/TranslationTraceUppaal/".concat(folderSave).concat("/preamble.trn"));
 
             Preamble preamble = new Preamble(channels, "1000", Integer.toString(Math.round(timeout) + 1));
             traceTrn.write(preamble.getPreamble());
@@ -163,7 +168,7 @@ public class Main {
 
 
 
-        String saveFileLog = "similarTracesLog.csv";
+        String saveFileLog = "/home/jaime/Documents/TranslationTraceUppaal/".concat(folderSave).concat("/similarTracesLog.csv");
 
         FileWriter fwLog = null;
         try {
@@ -234,7 +239,7 @@ public class Main {
         //Close the Print Writer
         outLog.close();
 
-        String saveFile = "similarTraces.csv";
+        String saveFile = "/home/jaime/Documents/TranslationTraceUppaal/".concat(folderSave).concat("/similarTraces.csv");
 
         FileWriter fw = null;
         try {
