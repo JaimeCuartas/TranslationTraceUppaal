@@ -25,9 +25,9 @@ public class Main {
         long timeInit = System.currentTimeMillis();
 
         String mutantsFolder = "/home/jaime/Documents/TranslationTraceUppaal/Train-Gate-Controller/mutNoUniform/";
-        String folderSave = "Ejemploparaprobar";
+        String folderSave = "1000clocks10timesFinal";
 
-        int nTraces = 2;
+        int nTraces = 10;
         //String mutantsFolder = "/home/jaime/Documents/TranslationTraceUppaal/Train-Gate-Controller/carpetaMut/";
 
 
@@ -143,7 +143,7 @@ public class Main {
         }
 
         try{
-            FileWriter traceTrn = new FileWriter("/home/jaime/Documents/TranslationTraceUppaal/".concat(folderSave).concat("/preamble.trn"));
+            FileWriter traceTrn = new FileWriter("/home/jaime/Documents/TranslationTraceUppaal/preamble.trn");
 
             Preamble preamble = new Preamble(channels, "1000", Integer.toString(Math.round(timeout) + 1));
             traceTrn.write(preamble.getPreamble());

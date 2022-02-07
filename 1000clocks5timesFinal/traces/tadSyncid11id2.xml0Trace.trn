@@ -1,0 +1,11 @@
+delay 1.2017;
+output new();
+delay 4.8358;
+output syncTime();
+delay 1.2826;
+output hello();
+delay 2.5082;
+output lower();
+delay 0.7953;
+output old();
+delay 989.4762;

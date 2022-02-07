@@ -1,0 +1,15 @@
+delay 5.2204;
+output old();
+delay 1.7532;
+output lower();
+delay 1.6823;
+output new();
+delay 18.4207;
+output down();
+delay 0.4345;
+output old();
+delay 0.3525;
+output raise();
+delay 0.7458;
+output new();
+delay 971.4905;
