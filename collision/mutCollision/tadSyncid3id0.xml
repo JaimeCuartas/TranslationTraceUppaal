@@ -9,21 +9,27 @@ broadcast chan hello , _empty_slave , _data0 , _data1 , _data2 , _data3 , _to_me
 <declaration></declaration>
 <location id="id0" x="192" y="384">
 <name x="216" y="384">s2_3</name>
+<label kind="exponentialrate" x="182" y="418">1</label>
 </location>
 <location id="id1" x="-128" y="384">
 <name x="-112" y="352">s2_4</name>
+<label kind="exponentialrate" x="-138" y="418">1</label>
 </location>
 <location id="id2" x="512" y="-32">
 <name x="528" y="-24">s2_2</name>
+<label kind="exponentialrate" x="502" y="2">1</label>
 </location>
 <location id="id3" x="-128" y="-32">
 <name x="-138" y="-62">s2_5</name>
+<label kind="exponentialrate" x="-138" y="2">1</label>
 </location>
 <location id="id4" x="192" y="256">
 <name x="200" y="264">s2_1</name>
+<label kind="exponentialrate" x="182" y="290">1</label>
 </location>
 <location id="id5" x="192" y="-32">
 <name x="182" y="-62">s2_0</name>
+<label kind="exponentialrate" x="182" y="2">1</label>
 </location>
 <init ref="id5"/>
 <transition>
@@ -123,21 +129,27 @@ broadcast chan hello , _empty_slave , _data0 , _data1 , _data2 , _data3 , _to_me
 <name>Template0</name>
 <location id="id6" x="192" y="384">
 <name x="216" y="384">s2_3</name>
+<label kind="exponentialrate" x="182" y="418">1</label>
 </location>
 <location id="id7" x="-128" y="384">
 <name x="-112" y="352">s2_4</name>
+<label kind="exponentialrate" x="-138" y="418">1</label>
 </location>
 <location id="id8" x="512" y="-32">
 <name x="528" y="-24">s2_2</name>
+<label kind="exponentialrate" x="502" y="2">1</label>
 </location>
 <location id="id9" x="-128" y="-32">
 <name x="-138" y="-62">s2_5</name>
+<label kind="exponentialrate" x="-138" y="2">1</label>
 </location>
 <location id="id10" x="192" y="256">
 <name x="200" y="264">s2_1</name>
+<label kind="exponentialrate" x="182" y="290">1</label>
 </location>
 <location id="id11" x="192" y="-32">
 <name x="182" y="-62">s2_0</name>
+<label kind="exponentialrate" x="182" y="2">1</label>
 </location>
 <init ref="id11"/>
 <transition>
@@ -235,7 +247,7 @@ Process = Template();
 system Process, Template0;</system>
 <queries>
 <query>
-<formula>simulate [&lt;=100; 1] {1}</formula>
+<formula></formula>
 <comment></comment>
 </query>
 </queries>
