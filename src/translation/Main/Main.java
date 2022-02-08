@@ -24,10 +24,10 @@ public class Main {
 
         long timeInit = System.currentTimeMillis();
 
-        String mutantsFolder = "/home/jaime/Documents/TranslationTraceUppaal/Train-Gate-Controller/mutNoUniform/";
-        String folderSave = "1000clocks10timesFinal";
+        String mutantsFolder = "/home/jaime/Documents/TranslationTraceUppaal/collision/mutCollision/";
+        String folderSave = "collision100clocks10timesFinal";
 
-        int nTraces = 10;
+        int nTraces = 2;
         //String mutantsFolder = "/home/jaime/Documents/TranslationTraceUppaal/Train-Gate-Controller/carpetaMut/";
 
 
