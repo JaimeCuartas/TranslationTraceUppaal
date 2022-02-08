@@ -33,7 +33,6 @@ broadcast chan hello , _empty_slave , _data0 , _data1 , _data2 , _data3 , _to_me
 <source ref="id1"/>
 <target ref="id1"/>
 <label kind="synchronisation" x="-208" y="496">_from_medium_slave?</label>
-<label kind="guard" x="-176" y="480">clock_c3 &lt;= 2</label>
 <nail  x="-64" y="480"/>
 <nail  x="-192" y="480"/>
 </transition>
@@ -52,14 +51,12 @@ broadcast chan hello , _empty_slave , _data0 , _data1 , _data2 , _data3 , _to_me
 <source ref="id0"/>
 <target ref="id1"/>
 <label kind="synchronisation" x="56" y="392">_in_2?</label>
-<label kind="guard" x="32" y="360">clock_c3 == 1</label>
 </transition>
 
 <transition>
 <source ref="id2"/>
 <target ref="id2"/>
 <label kind="synchronisation" x="440" y="-176">_from_medium_slave?</label>
-<label kind="guard" x="472" y="-152">clock_c3 &lt;= 2</label>
 <nail  x="448" y="-128"/>
 <nail  x="576" y="-128"/>
 </transition>
@@ -120,7 +117,6 @@ broadcast chan hello , _empty_slave , _data0 , _data1 , _data2 , _data3 , _to_me
 <source ref="id7"/>
 <target ref="id9"/>
 <label kind="synchronisation" x="-264" y="152">_to_medium_slave?</label>
-<label kind="guard" x="-240" y="136">clock_c3 == 2</label>
 </transition>
 <transition>
 <source ref="id6"/>
@@ -132,7 +128,6 @@ broadcast chan hello , _empty_slave , _data0 , _data1 , _data2 , _data3 , _to_me
 <source ref="id10"/>
 <target ref="id6"/>
 <label kind="synchronisation" x="195" y="314">_from_medium_slave?</label>
-<label kind="guard" x="195" y="297">clock_c3 == 0</label>
 </transition>
 <transition>
 <source ref="id8"/>
@@ -146,13 +141,11 @@ broadcast chan hello , _empty_slave , _data0 , _data1 , _data2 , _data3 , _to_me
 <source ref="id8"/>
 <target ref="id11"/>
 <label kind="synchronisation" x="280" y="-51">_from_medium_slave?</label>
-<label kind="guard" x="314" y="-68">clock_c3 == 2</label>
 </transition>
 <transition>
 <source ref="id10"/>
 <target ref="id8"/>
 <label kind="synchronisation" x="536" y="144">_out_2?</label>
-<label kind="guard" x="512" y="120">clock_c3 == 0</label>
 <nail  x="512" y="256"/>
 </transition>
 <transition>
@@ -198,7 +191,7 @@ Process = Template();
 system Process, Template0;</system>
 <queries>
 <query>
-<formula></formula>
+<formula>simulate [&lt;=5; 1] {1}</formula>
 <comment></comment>
 </query>
 </queries>

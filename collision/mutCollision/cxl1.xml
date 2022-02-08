@@ -11,7 +11,10 @@ broadcast chan hello , _empty_slave , _data0 , _data1 , _data2 , _data3 , _to_me
 <name x="216" y="384">s2_3</name>
 <label kind="exponentialrate" x="182" y="418">1</label>
 </location>
-
+<location id="id1" x="-128" y="384">
+<name x="-112" y="352">s2_4</name>
+<label kind="exponentialrate" x="-138" y="418">1</label>
+</location>
 <location id="id2" x="512" y="-32">
 <name x="528" y="-24">s2_2</name>
 <label kind="exponentialrate" x="502" y="2">1</label>
@@ -29,14 +32,29 @@ broadcast chan hello , _empty_slave , _data0 , _data1 , _data2 , _data3 , _to_me
 <label kind="exponentialrate" x="182" y="2">1</label>
 </location>
 <init ref="id5"/>
-
+<transition>
+<source ref="id1"/>
+<target ref="id1"/>
+<label kind="synchronisation" x="-208" y="496">_from_medium_slave?</label>
+<nail  x="-64" y="480"/>
+<nail  x="-192" y="480"/>
+</transition>
 <transition>
 <source ref="id3"/>
 <target ref="id5"/>
 <label kind="synchronisation" x="-24" y="-56">_empty_slave?</label>
 </transition>
-
-
+<transition>
+<source ref="id1"/>
+<target ref="id3"/>
+<label kind="synchronisation" x="-264" y="152">_to_medium_slave!</label>
+<label kind="guard" x="-240" y="136">clock_c3 == 2</label>
+</transition>
+<transition>
+<source ref="id0"/>
+<target ref="id1"/>
+<label kind="synchronisation" x="56" y="392">_in_2?</label>
+</transition>
 <transition>
 <source ref="id4"/>
 <target ref="id0"/>
@@ -125,7 +143,7 @@ broadcast chan hello , _empty_slave , _data0 , _data1 , _data2 , _data3 , _to_me
 <source ref="id7"/>
 <target ref="id7"/>
 <label kind="synchronisation" x="-208" y="496">_from_medium_slave!</label>
-<label kind="guard" x="-176" y="480">clock_c3 &lt;= 2</label>
+<label kind="guard" x="-176" y="480">clock_c3 &lt;=3</label>
 <nail  x="-64" y="480"/>
 <nail  x="-192" y="480"/>
 </transition>
