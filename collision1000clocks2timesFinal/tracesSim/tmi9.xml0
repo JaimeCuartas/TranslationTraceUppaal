@@ -1,0 +1,33 @@
+state
+( Process.s2_0 Template0.s2_0 ) 
+[ clock_c3=0 #time=0 ]
+
+delay 1.9571770701992525776091724765138
+
+state
+( Process.s2_0 Template0.s2_0 ) 
+[ clock_c3=1.9571770701992525776091724765138 #time=1.9571770701992525776091724765138 ]
+
+transition
+Template0.s2_0->Template0.s2_1 { 1, _from_medium_slave!, clock_c3 := 0 }
+Process.s2_0->Process.s2_1 { 1, _from_medium_slave?, 1 }
+
+state
+( Process.s2_1 Template0.s2_1 ) 
+[ clock_c3=0 #time=1.9571770701992525776091724765138 ]
+
+delay 0.33352594853329281532339223304007
+
+state
+( Process.s2_1 Template0.s2_1 ) 
+[ clock_c3=0.33352594853329281532339223304007 #time=2.2907030187325454484437159408117 ]
+
+delay 997.80929698126749372022459283471
+
+state
+( Process.s2_1 Template0.s2_1 ) 
+[ clock_c3=998.14282292980078636901453137398 #time=1000.1000000000000227373675443232 ]
+
+[2K -- Formula is satisfied.
+1:
+[0]: (0,1) (1000.1,1)

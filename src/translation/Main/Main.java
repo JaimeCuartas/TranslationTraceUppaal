@@ -25,7 +25,7 @@ public class Main {
         long timeInit = System.currentTimeMillis();
 
         String mutantsFolder = "/home/jaime/Documents/TranslationTraceUppaal/collision/mutCollision/";
-        String folderSave = "collision100clocks10timesFinal";
+        String folderSave = "collision1000clocks10timesFinal";
 
         int nTraces = 10;
         //String mutantsFolder = "/home/jaime/Documents/TranslationTraceUppaal/Train-Gate-Controller/carpetaMut/";
