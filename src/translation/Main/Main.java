@@ -27,7 +27,7 @@ public class Main {
         String mutantsFolder = "/home/jaime/Documents/TranslationTraceUppaal/collision/mutCollision/";
         String folderSave = "collision100clocks10timesFinal";
 
-        int nTraces = 2;
+        int nTraces = 10;
         //String mutantsFolder = "/home/jaime/Documents/TranslationTraceUppaal/Train-Gate-Controller/carpetaMut/";
 
 
