@@ -1,4 +1,4 @@
 input ;
-output new(), syncTime(), lower(), down();
+output _from_medium_slave(), hello();
 precision 1000;
-timeout 22000;
+timeout 103;

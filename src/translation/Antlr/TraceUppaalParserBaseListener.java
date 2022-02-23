@@ -1,4 +1,4 @@
-// Generated from C:/Users/Jaime/OneDrive - correounivalle.edu.co/Documentos/Github/TranslationTraceUppaal/src/translation/Antlr\TraceUppaalParser.g4 by ANTLR 4.9.1
+// Generated from /home/jaime/Documents/TranslationTraceUppaal/src/translation/Antlr/TraceUppaalParser.g4 by ANTLR 4.9.2
 package translation.Antlr;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -148,6 +148,18 @@ public class TraceUppaalParserBaseListener implements TraceUppaalParserListener 
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterAction(TraceUppaalParser.ActionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAction(TraceUppaalParser.ActionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterSync(TraceUppaalParser.SyncContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -155,6 +167,18 @@ public class TraceUppaalParserBaseListener implements TraceUppaalParserListener 
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitSync(TraceUppaalParser.SyncContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterTau(TraceUppaalParser.TauContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTau(TraceUppaalParser.TauContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

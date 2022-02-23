@@ -1,6 +1,6 @@
 parser grammar TraceUppaalParser;
 options { tokenVocab=TraceUppaalLexer; }
-trace       : state (transition state)* ;
+trace       : state (transition state)*;
 
 state       :   'state'
                 location
@@ -25,21 +25,21 @@ discrete    :   'transition'
                 ;
 
 aDiscrete   :   loc '->' loc
-                '{' guard ',' (sync | 'tau') ',' (update | NAT)  '}'
+                '{' guard ',' action ',' (update | NAT)  '}'
 
                 ;
 
 guard       :   expr ;
 
+action      :   sync | tau ;
+
 sync        :   IDENTIFIER ('?' | '!') ;
+
+tau         :   'tau' ;
 
 update      :   assign (',' assign)*;
 
 assign      :   varFieldDecl ':=' expr;
-
-
-
-
 
 expr        :   IDENTIFIER  # IdentifierExpr
             |   NAT         # NatExpr
@@ -92,3 +92,5 @@ varFieldDecl:   IDENTIFIER arrayDecl* ;
 arrayDecl   :   '[' expr ']'    # ArrayDeclExpr
             |   '[' type ']'    # ArrayDeclType
             ;
+
+

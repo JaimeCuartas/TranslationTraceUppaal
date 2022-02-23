@@ -1,0 +1,9 @@
+delay 0.7033;
+output new();
+delay 0.8726;
+output syncTime();
+delay 0.1262;
+output lower();
+delay 0.0468;
+output new();
+delay 998.3511;

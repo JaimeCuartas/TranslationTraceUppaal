@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
+<nta>
+<declaration>broadcast chan syncTime , new , old , raise , lower , up , down , hello ;
+clock yr ;
+clock t ;
+</declaration>
+<template>
+<name x="5" y="5">Template</name>
+<declaration></declaration>
+<location id="id0" x="-192" y="64">
+<name x="-232" y="56">H1</name>
+<label kind="invariant" x="-238" y="85">t&lt;30</label>
+</location>
+<location id="id1" x="-32" y="64">
+<name x="-8" y="48">H2</name>
+<label kind="invariant" x="-25" y="76">t&lt;40</label>
+</location>
+<location id="id2" x="-64" y="288">
+<name x="-104" y="280">G2</name>
+<label kind="invariant" x="-76" y="314">t&lt;100</label>
+</location>
+<location id="id3" x="160" y="288">
+<name x="184" y="272">G1</name>
+<label kind="invariant" x="150" y="305">t&lt;100</label>
+</location>
+<location id="id4" x="56" y="160">
+<name x="46" y="130">G3</name>
+<label kind="invariant" x="34" y="178">t&lt;100</label>
+</location>
+<location id="id5" x="-64" y="160">
+<name x="-96" y="152">H</name>
+<label kind="invariant" x="-127" y="187">t&lt;30</label>
+</location>
+<location id="id6" x="352" y="160">
+<name x="342" y="130">F1</name>
+<label kind="invariant" x="342" y="177">t&lt;40</label>
+</location>
+<location id="id7" x="161" y="161">
+<name x="151" y="131">G</name>
+<label kind="invariant" x="127" y="187">t&lt;100</label>
+</location>
+<location id="id8" x="161" y="34">
+<name x="151" y="4">F2</name>
+<label kind="invariant" x="120" y="44">t&lt;40</label>
+</location>
+<location id="id9" x="48" y="-64">
+<name x="38" y="-94">E3</name>
+<label kind="invariant" x="25" y="-42">t&lt;100</label>
+</location>
+<location id="id10" x="161" y="-68">
+<name x="151" y="-98">F</name>
+<label kind="invariant" x="186" y="-76">t&lt;40</label>
+</location>
+<location id="id11" x="153" y="-221">
+<name x="143" y="-251">E2</name>
+<label kind="invariant" x="143" y="-204">t&lt;100</label>
+</location>
+<location id="id12" x="-64" y="-224">
+<name x="-74" y="-254">E1</name>
+<label kind="invariant" x="-74" y="-207">t&lt;100</label>
+</location>
+<location id="id13" x="-64" y="-64">
+<name x="-74" y="-94">E</name>
+<label kind="invariant" x="-93" y="-34">t&lt;100</label>
+</location>
+<init ref="id13"/>
+<transition>
+<source ref="id3"/>
+<target ref="id9"/>
+<label kind="synchronisation" x="0" y="0">hello!</label>
+</transition>
+<transition>
+<source ref="id0"/>
+<target ref="id13"/>
+<label kind="synchronisation" x="-188" y="-15">up!</label>
+<label kind="guard" x="-238" y="-42">yr &gt; 10 and yr &lt; 30</label>
+<label kind="assignment" x="-174" y="0">t=0</label>
+</transition>
+<transition>
+<source ref="id5"/>
+<target ref="id0"/>
+<label kind="synchronisation" x="-153" y="119">new!</label>
+</transition>
+<transition>
+<source ref="id1"/>
+<target ref="id13"/>
+<label kind="synchronisation" x="-24" y="0">up!</label>
+<label kind="guard" x="-42" y="-25">yr &gt; 20 and yr &lt; 40</label>
+<label kind="assignment" x="-48" y="0">t=0</label>
+</transition>
+<transition>
+<source ref="id5"/>
+<target ref="id1"/>
+<label kind="synchronisation" x="-42" y="93">old!</label>
+</transition>
+<transition>
+<source ref="id4"/>
+<target ref="id5"/>
+<label kind="synchronisation" x="-8" y="144">raise!</label>
+<label kind="assignment" x="-8" y="159">yr=0,
+t=0</label>
+</transition>
+<transition>
+<source ref="id7"/>
+<target ref="id4"/>
+<label kind="synchronisation" x="96" y="144">old!</label>
+<label kind="assignment" x="82" y="160">t=0</label>
+</transition>
+<transition>
+<source ref="id2"/>
+<target ref="id5"/>
+<label kind="synchronisation" x="-124" y="209">raise!</label>
+<label kind="assignment" x="-124" y="224">yr=0,
+t=0</label>
+</transition>
+<transition>
+<source ref="id3"/>
+<target ref="id2"/>
+<label kind="synchronisation" x="8" y="272">syncTime!</label>
+<label kind="assignment" x="-46" y="288">t=0</label>
+</transition>
+<transition>
+<source ref="id7"/>
+<target ref="id3"/>
+<label kind="synchronisation" x="100" y="209">new!</label>
+<label kind="assignment" x="100" y="224">yr=0,
+t=0</label>
+</transition>
+<transition>
+<source ref="id10"/>
+<target ref="id6"/>
+<label kind="synchronisation" x="273" y="32">new!</label>
+</transition>
+<transition>
+<source ref="id6"/>
+<target ref="id7"/>
+<label kind="synchronisation" x="196" y="145">down!</label>
+<label kind="guard" x="196" y="130">yr &gt; 20 and yr &lt; 40</label>
+<label kind="assignment" x="179" y="160">t=0</label>
+</transition>
+<transition>
+<source ref="id8"/>
+<target ref="id7"/>
+<label kind="synchronisation" x="100" y="81">down!</label>
+<label kind="guard" x="93" y="76">yr &gt; 20 and yr &lt; 40</label>
+<label kind="assignment" x="160" y="96">t=0</label>
+</transition>
+<transition>
+<source ref="id10"/>
+<target ref="id8"/>
+<label kind="synchronisation" x="128" y="-24">old!</label>
+</transition>
+<transition>
+<source ref="id9"/>
+<target ref="id10"/>
+<label kind="synchronisation" x="80" y="-80">lower!</label>
+<label kind="assignment" x="88" y="-64">yr=0,
+t=0</label>
+</transition>
+<transition>
+<source ref="id13"/>
+<target ref="id9"/>
+<label kind="synchronisation" x="-24" y="-80">old!</label>
+<label kind="assignment" x="-46" y="-64">t=0</label>
+</transition>
+<transition>
+<source ref="id11"/>
+<target ref="id10"/>
+<label kind="synchronisation" x="100" y="-159">lower!</label>
+<label kind="assignment" x="100" y="-144">yr=0,
+t=0</label>
+</transition>
+<transition>
+<source ref="id12"/>
+<target ref="id11"/>
+<label kind="synchronisation" x="-12" y="-239">syncTime!</label>
+<label kind="assignment" x="-46" y="-222">t=0</label>
+</transition>
+<transition>
+<source ref="id13"/>
+<target ref="id12"/>
+<label kind="synchronisation" x="-124" y="-159">new!</label>
+<label kind="assignment" x="-124" y="-144">yr=0,
+t=0</label>
+</transition>
+</template>
+<system>// Place template instantiations here.
+Process = Template();
+
+// List one or more processes to be composed into a system.
+system Process;</system>
+<queries>
+<query>
+<formula>A[] not deadlock</formula>
+<comment></comment>
+</query>
+<query>
+<formula>simulate [&lt;=5000;5 ] {yr,t}</formula>
+<comment></comment>
+</query>
+</queries>
+</nta>

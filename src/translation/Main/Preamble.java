@@ -9,10 +9,10 @@ public class Preamble {
     private String timeout;
     private String precision;
 
-    public Preamble (Set<String> channels, String timeout, String precision){
+    public Preamble (Set<String> channels, String precision, String timeout){
         this.channels = channels;
-        this.timeout = timeout;
         this.precision = precision;
+        this.timeout = timeout;
     }
 
     public String getChannelsString() {

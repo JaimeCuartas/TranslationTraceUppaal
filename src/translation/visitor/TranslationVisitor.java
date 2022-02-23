@@ -12,9 +12,15 @@ import java.util.Set;
 public class TranslationVisitor extends TraceUppaalParserBaseVisitor<String> {
 
     private final Set<String> channels;
+    private float timeout;
 
     public TranslationVisitor(Set<String> channels){
+        this.timeout = 0;
         this.channels = channels;
+    }
+
+    public float getTimeout(){
+        return this.timeout;
     }
 
     public Set<String> getChannels() {
@@ -65,9 +71,12 @@ public class TranslationVisitor extends TraceUppaalParserBaseVisitor<String> {
         String delayString = ctx.POINT().toString();
         double delayDouble = Double.parseDouble(delayString);
 
+
         //DecimalFormat dFormat = new DecimalFormat("#.####");
         //delayString = dFormat.format(delayDouble);
         delayString = String.format(Locale.US, "%.4f", delayDouble);
+
+        this.timeout += Float.parseFloat(delayString);
 
         return "delay ".concat(delayString).concat(";\n");
     }
@@ -79,7 +88,7 @@ public class TranslationVisitor extends TraceUppaalParserBaseVisitor<String> {
 
     @Override
     public String visitADiscrete(TraceUppaalParser.ADiscreteContext ctx) {
-        String nameChan = visit(ctx.sync());
+        String nameChan = visit(ctx.action());
         String output = "output ".concat(nameChan).concat("();\n");
         this.channels.add(nameChan);
         return output;
@@ -88,6 +97,22 @@ public class TranslationVisitor extends TraceUppaalParserBaseVisitor<String> {
     @Override
     public String visitGuard(TraceUppaalParser.GuardContext ctx) {
         return super.visitGuard(ctx);
+    }
+
+    @Override
+    public String visitAction(TraceUppaalParser.ActionContext ctx){
+        if(ctx.tau()!=null){
+            return visit(ctx.tau());
+        }
+        if(ctx.sync()!=null){
+            return visit(ctx.sync());
+        }
+        return ctx.toString();
+    }
+
+    @Override
+    public String visitTau(TraceUppaalParser.TauContext ctx) {
+        return "tau";
     }
 
     @Override

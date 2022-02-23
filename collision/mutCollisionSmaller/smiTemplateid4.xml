@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
+<nta>
+<declaration>clock clock_c3 ;
+broadcast chan hello , _empty_slave , _data0 , _data1 , _data2 , _data3 , _to_medium_slave , _from_medium_slave , _in_2 , _out_2 ;
+</declaration>
+<template>
+<name x="5" y="5">Template</name>
+<declaration></declaration>
+<location id="id0" x="192" y="384">
+<name x="216" y="384">s2_3</name>
+<label kind="exponentialrate" x="182" y="418">1</label>
+</location>
+<location id="id1" x="-128" y="384">
+<name x="-112" y="352">s2_4</name>
+<label kind="exponentialrate" x="-138" y="418">1</label>
+</location>
+<location id="id2" x="512" y="-32">
+<name x="528" y="-24">s2_2</name>
+<label kind="exponentialrate" x="502" y="2">1</label>
+</location>
+<location id="id3" x="-128" y="-32">
+<name x="-138" y="-62">s2_5</name>
+<label kind="exponentialrate" x="-138" y="2">1</label>
+</location>
+
+<location id="id5" x="192" y="-32">
+<name x="182" y="-62">s2_0</name>
+<label kind="exponentialrate" x="182" y="2">1</label>
+</location>
+<init ref="id5"/>
+<transition>
+<source ref="id1"/>
+<target ref="id1"/>
+<label kind="synchronisation" x="-208" y="496">_from_medium_slave?</label>
+<nail  x="-64" y="480"/>
+<nail  x="-192" y="480"/>
+</transition>
+<transition>
+<source ref="id3"/>
+<target ref="id5"/>
+<label kind="synchronisation" x="-24" y="-56">_empty_slave?</label>
+</transition>
+<transition>
+<source ref="id1"/>
+<target ref="id3"/>
+<label kind="synchronisation" x="-264" y="152">_to_medium_slave!</label>
+<label kind="guard" x="-240" y="136">clock_c3 == 2</label>
+</transition>
+<transition>
+<source ref="id0"/>
+<target ref="id1"/>
+<label kind="synchronisation" x="56" y="392">_in_2?</label>
+</transition>
+
+<transition>
+<source ref="id2"/>
+<target ref="id2"/>
+<label kind="synchronisation" x="440" y="-176">_from_medium_slave?</label>
+<nail  x="448" y="-128"/>
+<nail  x="576" y="-128"/>
+</transition>
+<transition>
+<source ref="id2"/>
+<target ref="id5"/>
+<label kind="synchronisation" x="280" y="-51">_from_medium_slave!</label>
+<label kind="guard" x="314" y="-68">clock_c3 == 2</label>
+</transition>
+
+
+
+
+
+
+</template>
+<template>
+<name>Template0</name>
+<location id="id6" x="192" y="384">
+<name x="216" y="384">s2_3</name>
+<label kind="exponentialrate" x="182" y="418">1</label>
+</location>
+<location id="id7" x="-128" y="384">
+<name x="-112" y="352">s2_4</name>
+<label kind="exponentialrate" x="-138" y="418">1</label>
+</location>
+<location id="id8" x="512" y="-32">
+<name x="528" y="-24">s2_2</name>
+<label kind="exponentialrate" x="502" y="2">1</label>
+</location>
+<location id="id9" x="-128" y="-32">
+<name x="-138" y="-62">s2_5</name>
+<label kind="exponentialrate" x="-138" y="2">1</label>
+</location>
+<location id="id10" x="192" y="256">
+<name x="200" y="264">s2_1</name>
+<label kind="exponentialrate" x="182" y="290">1</label>
+</location>
+<location id="id11" x="192" y="-32">
+<name x="182" y="-62">s2_0</name>
+<label kind="exponentialrate" x="182" y="2">1</label>
+</location>
+<init ref="id11"/>
+<transition>
+<source ref="id7"/>
+<target ref="id7"/>
+<label kind="synchronisation" x="-208" y="496">_from_medium_slave!</label>
+<label kind="guard" x="-176" y="480">clock_c3 &lt;= 2</label>
+<nail  x="-64" y="480"/>
+<nail  x="-192" y="480"/>
+</transition>
+<transition>
+<source ref="id9"/>
+<target ref="id11"/>
+<label kind="synchronisation" x="-24" y="-56">_empty_slave!</label>
+</transition>
+<transition>
+<source ref="id7"/>
+<target ref="id9"/>
+<label kind="synchronisation" x="-264" y="152">_to_medium_slave?</label>
+</transition>
+<transition>
+<source ref="id6"/>
+<target ref="id7"/>
+<label kind="synchronisation" x="56" y="392">_in_2!</label>
+<label kind="guard" x="32" y="360">clock_c3 == 1</label>
+</transition>
+<transition>
+<source ref="id10"/>
+<target ref="id6"/>
+<label kind="synchronisation" x="195" y="314">_from_medium_slave?</label>
+</transition>
+<transition>
+<source ref="id8"/>
+<target ref="id8"/>
+<label kind="synchronisation" x="440" y="-176">_from_medium_slave!</label>
+<label kind="guard" x="472" y="-152">clock_c3 &lt;= 2</label>
+<nail  x="448" y="-128"/>
+<nail  x="576" y="-128"/>
+</transition>
+<transition>
+<source ref="id8"/>
+<target ref="id11"/>
+<label kind="synchronisation" x="280" y="-51">_from_medium_slave?</label>
+</transition>
+<transition>
+<source ref="id10"/>
+<target ref="id8"/>
+<label kind="synchronisation" x="536" y="144">_out_2?</label>
+<nail  x="512" y="256"/>
+</transition>
+<transition>
+<source ref="id10"/>
+<target ref="id11"/>
+<label kind="synchronisation" x="396" y="156">_data1!</label>
+<label kind="guard" x="380" y="140">clock_c3 == 0</label>
+<nail  x="484" y="68"/>
+</transition>
+<transition>
+<source ref="id10"/>
+<target ref="id11"/>
+<label kind="synchronisation" x="-37" y="180">_data2!</label>
+<label kind="guard" x="-61" y="156">clock_c3 == 0</label>
+<nail  x="-85" y="76"/>
+</transition>
+<transition>
+<source ref="id10"/>
+<target ref="id11"/>
+<label kind="synchronisation" x="330" y="75">_data3!</label>
+<label kind="guard" x="322" y="51">clock_c3 == 0</label>
+<nail  x="331" y="76"/>
+</transition>
+<transition>
+<source ref="id10"/>
+<target ref="id11"/>
+<label kind="synchronisation" x="-22" y="85">_data0!</label>
+<label kind="guard" x="-46" y="61">clock_c3 == 0</label>
+<nail  x="34" y="85"/>
+</transition>
+<transition>
+<source ref="id11"/>
+<target ref="id10"/>
+<label kind="synchronisation" x="59" y="76">_from_medium_slave!</label>
+<label kind="assignment" x="76" y="93">clock_c3=0</label>
+<nail  x="187" y="102"/>
+</transition>
+</template>
+<system>// Place template instantiations here.
+Process = Template();
+
+// List one or more processes to be composed into a system.
+system Process, Template0;</system>
+<queries>
+<query>
+<formula>simulate [&lt;=5; 1] {1}</formula>
+<comment></comment>
+</query>
+</queries>
+</nta>

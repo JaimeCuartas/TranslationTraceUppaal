@@ -294,7 +294,6 @@ clock t;</declaration>
 		<transition>
 			<source ref="id19"/>
 			<target ref="id17"/>
-			<label kind="guard" x="-136" y="-318">yr&lt;=10</label>
 			<label kind="synchronisation" x="-136" y="-301">new!</label>
 		</transition>
 		<transition>

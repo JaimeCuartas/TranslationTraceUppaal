@@ -1,0 +1,12 @@
+delay 1.0485;
+output hello();
+delay 0.7487;
+output hello();
+delay 0.6319;
+output hello();
+delay 1.1855;
+output hello();
+delay 0.0993;
+output _from_medium_slave();
+delay 0.0371;
+delay 96.3490;
