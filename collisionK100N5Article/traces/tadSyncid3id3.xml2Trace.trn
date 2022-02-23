@@ -1,0 +1,4 @@
+delay 0.0055;
+output _from_medium_slave();
+delay 0.2478;
+delay 99.8467;

@@ -24,10 +24,10 @@ public class Main {
 
         long timeInit = System.currentTimeMillis();
 
-        String mutantsFolder = "/home/jaime/Documents/TranslationTraceUppaal/collision/mutCollision/";
-        String folderSave = "collision1000clocks10timesFinal";
+        String mutantsFolder = "/home/jaime/Documents/TranslationTraceUppaal/collision/mutCollisionSmaller/";
+        String folderSave = "collisionK100N5Article";
 
-        int nTraces = 10;
+        int nTraces = 5;
         //String mutantsFolder = "/home/jaime/Documents/TranslationTraceUppaal/Train-Gate-Controller/carpetaMut/";
 
 
@@ -43,7 +43,7 @@ public class Main {
         Set<String> channels = new HashSet<>();
         float timeout = 0;
 
-        String prop = "/home/jaime/Documents/TranslationTraceUppaal/Train-Gate-Controller/prop.q";
+        String prop = "/home/jaime/Documents/TranslationTraceUppaal/prop100.q";
         String folderTraces = "/home/jaime/Documents/TranslationTraceUppaal/".concat(folderSave).concat("/").concat("traces/");
         String verifyTA = "/home/jaime/Downloads/uppaal64-4.1.26/bin-Linux/verifyta";
 
