@@ -1,4 +1,4 @@
 input ;
 output _from_medium_slave(), hello();
 precision 1000;
-timeout 103;
+timeout 105;
