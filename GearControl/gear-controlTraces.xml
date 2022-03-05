@@ -502,10 +502,10 @@ broadcast chan _ClutchIsClosed, _CloseClutch, _GearSet, _ReqSet, _ReqNewGear, Rq
 Process = Template();
 
 // List one or more processes to be composed into a system.
-system Process;</system>
+system Process, Template0;</system>
 	<queries>
 		<query>
-			<formula>simulate [&lt;=1000; 1] {1}
+			<formula>simulate [&lt;=1000; 100] {1}
 </formula>
 			<comment></comment>
 		</query>
