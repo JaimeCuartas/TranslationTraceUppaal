@@ -1,13 +1,63 @@
 state
-( Process.Gear ) 
+( Process.Gear Template0.Gear ) 
 [ GCTimer=0 #time=0 ]
 
-delay 100.0999999999999943156581139192
+delay 0.053097680556439513788191675303096
 
 state
-( Process.Gear ) 
-[ GCTimer=100.0999999999999943156581139192 #time=100.0999999999999943156581139192 ]
+( Process.Gear Template0.Gear ) 
+[ GCTimer=0.053097680556439513788191675303096 #time=0.053097680556439513788191675303096 ]
+
+transition
+Template0.Gear->Template0.Initiate { 1, _ReqNewGear!, 1 }
+Process.Gear->Process.Initiate { 1, _ReqNewGear?, 1 }
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=0.053097680556439513788191675303096 #time=0.053097680556439513788191675303096 ]
+
+delay 2.2512738214007672610250665456988
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=2.3043715019572066360353801428573 #time=2.3043715019572066360353801428573 ]
+
+transition
+Process.Initiate->Process.ReqSyncSpeed { 1, _void!, 1 }
+Template0.Initiate->Template0.ReqSyncSpeed { 1, _void?, 1 }
+
+state
+( Process.ReqSyncSpeed Template0.ReqSyncSpeed ) 
+[ GCTimer=2.3043715019572066360353801428573 #time=2.3043715019572066360353801428573 ]
+
+delay 0.44278912215762372683869330103335
+
+state
+( Process.ReqSyncSpeed Template0.ReqSyncSpeed ) 
+[ GCTimer=2.7471606241148305294075271376641 #time=2.7471606241148305294075271376641 ]
+
+transition
+Process.ReqSyncSpeed->Process.CheckSyncSpeed { 1, _ReqSpeed!, GCTimer := 0 }
+Template0.ReqSyncSpeed->Template0.CheckSyncSpeed { 1, _ReqSpeed?, GCTimer := 0 }
+
+state
+( Process.CheckSyncSpeed Template0.CheckSyncSpeed ) 
+[ GCTimer=0 #time=2.7471606241148305294075271376641 ]
+
+delay 128.99286327185109257698059082031
+
+state
+( Process.CheckSyncSpeed Template0.CheckSyncSpeed ) 
+[ GCTimer=128.99286327185109257698059082031 #time=131.74002389596591910958522930741 ]
+
+transition
+Template0.CheckSyncSpeed->Template0.ReqSetGear { GCTimer < 150, _SpeedSet!, 1 }
+Process.CheckSyncSpeed->Process.ReqSetGear { 1, _SpeedSet?, 1 }
+
+state
+( Process.ReqSetGear Template0.ReqSetGear ) 
+[ GCTimer=128.99286327185109257698059082031 #time=131.74002389596591910958522930741 ]
 
 [2K -- Formula is satisfied.
 1:
-[0]: (0,1) (100.1,1)
+[0]: (0,1) (131.7400238959659,1)

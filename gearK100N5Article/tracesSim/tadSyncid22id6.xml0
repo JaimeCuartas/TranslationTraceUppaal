@@ -1,1 +1,7 @@
-EXCEPTION: Location Process.Gear has unbounded delay but no positive rate.
+[2K -- Formula is NOT satisfied.
+Location Process.CheckClutchClosed2
+[ GCTimer=0 #time=0.97367364607041961832578635949176 ]
+
+is time-locked.
+1:
+[0]: (0,1) (0.9736736460704196,1)

@@ -1,13 +1,61 @@
 state
-( Process.Gear ) 
+( Process.Gear Template0.Gear ) 
 [ GCTimer=0 #time=0 ]
 
-delay 100.0999999999999943156581139192
+delay 1.661079426915592627267415082315
 
 state
-( Process.Gear ) 
-[ GCTimer=100.0999999999999943156581139192 #time=100.0999999999999943156581139192 ]
+( Process.Gear Template0.Gear ) 
+[ GCTimer=1.661079426915592627267415082315 #time=1.661079426915592627267415082315 ]
+
+transition
+Template0.Gear->Template0.Initiate { 1, _ReqNewGear!, 1 }
+Process.Gear->Process.Initiate { 1, _ReqNewGear?, 1 }
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=1.661079426915592627267415082315 #time=1.661079426915592627267415082315 ]
+
+delay 0.48368743924639129305731444219418
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=2.1447668661619840868581832182826 #time=2.1447668661619840868581832182826 ]
+
+transition
+Process.Initiate->Process.CheckTorque { 1, RqZeroTorque!, GCTimer := 0 }
+Template0.Initiate->Template0.CheckTorque { 1, RqZeroTorque?, GCTimer := 0 }
+
+state
+( Process.CheckTorque Template0.CheckTorque ) 
+[ GCTimer=0 #time=2.1447668661619840868581832182826 ]
+
+delay 19.946451546857133507728576660156
+
+state
+( Process.CheckTorque Template0.CheckTorque ) 
+[ GCTimer=19.946451546857133507728576660156 #time=22.091218413019117150497550028376 ]
+
+transition
+Template0.CheckTorque->Template0.ReqNeuGear { GCTimer < 250, _TorqueZero!, 1 }
+
+state
+( Process.CheckTorque Template0.ReqNeuGear ) 
+[ GCTimer=19.946451546857133507728576660156 #time=22.091218413019117150497550028376 ]
+
+delay 232.55474859965033829212188720703
+
+state
+( Process.CheckTorque Template0.ReqNeuGear ) 
+[ GCTimer=252.50120014650747179985046386719 #time=254.6459670126694447844784008339 ]
+
+transition
+Process.CheckTorque->Process.CheckClutch2 { GCTimer >= 250, _OpenClutch!, GCTimer := 0 }
+
+state
+( Process.CheckClutch2 Template0.ReqNeuGear ) 
+[ GCTimer=0 #time=254.6459670126694447844784008339 ]
 
 [2K -- Formula is satisfied.
 1:
-[0]: (0,1) (100.1,1)
+[0]: (0,1) (254.6459670126694,1)

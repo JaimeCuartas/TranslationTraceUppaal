@@ -1,1 +1,63 @@
-EXCEPTION: Location Process.Gear has unbounded delay but no positive rate.
+state
+( Process.Gear Template0.Gear ) 
+[ GCTimer=0 #time=0 ]
+
+delay 1.1745374912263089051123188255588
+
+state
+( Process.Gear Template0.Gear ) 
+[ GCTimer=1.1745374912263089051123188255588 #time=1.1745374912263089051123188255588 ]
+
+transition
+Template0.Gear->Template0.Initiate { 1, _ReqNewGear!, 1 }
+Process.Gear->Process.Initiate { 1, _ReqNewGear?, 1 }
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=1.1745374912263089051123188255588 #time=1.1745374912263089051123188255588 ]
+
+delay 1.9704276743706532482036664077896
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=3.144965165596961931271380308317 #time=3.144965165596961931271380308317 ]
+
+transition
+Process.Initiate->Process.ReqSyncSpeed { 1, _void!, 1 }
+Template0.Initiate->Template0.ReqSyncSpeed { 1, _void?, 1 }
+
+state
+( Process.ReqSyncSpeed Template0.ReqSyncSpeed ) 
+[ GCTimer=3.144965165596961931271380308317 #time=3.144965165596961931271380308317 ]
+
+delay 0.40683996569845259916320401316625
+
+state
+( Process.ReqSyncSpeed Template0.ReqSyncSpeed ) 
+[ GCTimer=3.5518051312954144194122818589676 #time=3.5518051312954144194122818589676 ]
+
+transition
+Process.ReqSyncSpeed->Process.CheckSyncSpeed { 1, _ReqSpeed!, GCTimer := 0 }
+Template0.ReqSyncSpeed->Template0.CheckSyncSpeed { 1, _ReqSpeed?, GCTimer := 0 }
+
+state
+( Process.CheckSyncSpeed Template0.CheckSyncSpeed ) 
+[ GCTimer=0 #time=3.5518051312954144194122818589676 ]
+
+delay 122.3479691706597805023193359375
+
+state
+( Process.CheckSyncSpeed Template0.CheckSyncSpeed ) 
+[ GCTimer=122.3479691706597805023193359375 #time=125.89977430195519048083951929584 ]
+
+transition
+Template0.CheckSyncSpeed->Template0.ReqSetGear { GCTimer < 150, _SpeedSet!, 1 }
+Process.CheckSyncSpeed->Process.ReqSetGear { 1, _SpeedSet?, 1 }
+
+state
+( Process.ReqSetGear Template0.ReqSetGear ) 
+[ GCTimer=122.3479691706597805023193359375 #time=125.89977430195519048083951929584 ]
+
+[2K -- Formula is satisfied.
+1:
+[0]: (0,1) (125.8997743019552,1)

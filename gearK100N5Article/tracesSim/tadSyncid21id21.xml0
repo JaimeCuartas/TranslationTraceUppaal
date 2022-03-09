@@ -1,13 +1,62 @@
 state
-( Process.Gear ) 
+( Process.Gear Template0.Gear ) 
 [ GCTimer=0 #time=0 ]
 
-delay 100.0999999999999943156581139192
+delay 0.89332372272752025299524802903761
 
 state
-( Process.Gear ) 
-[ GCTimer=100.0999999999999943156581139192 #time=100.0999999999999943156581139192 ]
+( Process.Gear Template0.Gear ) 
+[ GCTimer=0.89332372272752025299524802903761 #time=0.89332372272752025299524802903761 ]
+
+transition
+Template0.Gear->Template0.Initiate { 1, _ReqNewGear!, 1 }
+Process.Gear->Process.Initiate { 1, _ReqNewGear?, 1 }
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=0.89332372272752025299524802903761 #time=0.89332372272752025299524802903761 ]
+
+delay 0.25872004629889644444773466602783
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=1.1520437690264166974429826950654 #time=1.1520437690264166974429826950654 ]
+
+transition
+Process.Initiate->Process.Initiate { 1, hello!, 1 }
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=1.1520437690264166974429826950654 #time=1.1520437690264166974429826950654 ]
+
+delay 0.10892618864672902467827242389831
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=1.2609699576731456804878916955204 #time=1.2609699576731456804878916955204 ]
+
+transition
+Process.Initiate->Process.CheckTorque { 1, RqZeroTorque!, GCTimer := 0 }
+Template0.Initiate->Template0.CheckTorque { 1, RqZeroTorque?, GCTimer := 0 }
+
+state
+( Process.CheckTorque Template0.CheckTorque ) 
+[ GCTimer=0 #time=1.2609699576731456804878916955204 ]
+
+delay 173.78406722447834908962249755859
+
+state
+( Process.CheckTorque Template0.CheckTorque ) 
+[ GCTimer=173.78406722447834908962249755859 #time=175.04503718215150342984998133034 ]
+
+transition
+Template0.CheckTorque->Template0.ReqNeuGear { GCTimer < 250, _TorqueZero!, 1 }
+Process.CheckTorque->Process.ReqNeuGear { 1, _TorqueZero?, 1 }
+
+state
+( Process.ReqNeuGear Template0.ReqNeuGear ) 
+[ GCTimer=173.78406722447834908962249755859 #time=175.04503718215150342984998133034 ]
 
 [2K -- Formula is satisfied.
 1:
-[0]: (0,1) (100.1,1)
+[0]: (0,1) (175.0450371821515,1)

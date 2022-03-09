@@ -1,13 +1,63 @@
 state
-( Process.Gear ) 
+( Process.Gear Template0.Gear ) 
 [ GCTimer=0 #time=0 ]
 
-delay 100.0999999999999943156581139192
+delay 0.43941777142289190072332871750405
 
 state
-( Process.Gear ) 
-[ GCTimer=100.0999999999999943156581139192 #time=100.0999999999999943156581139192 ]
+( Process.Gear Template0.Gear ) 
+[ GCTimer=0.43941777142289190072332871750405 #time=0.43941777142289190072332871750405 ]
+
+transition
+Template0.Gear->Template0.Initiate { 1, _ReqNewGear!, 1 }
+Process.Gear->Process.Initiate { 1, _ReqNewGear?, 1 }
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=0.43941777142289190072332871750405 #time=0.43941777142289190072332871750405 ]
+
+delay 0.152306812392794754806857326912
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=0.59172458381568660001903481315821 #time=0.59172458381568660001903481315821 ]
+
+transition
+Process.Initiate->Process.ReqSyncSpeed { 1, _void!, 1 }
+Template0.Initiate->Template0.ReqSyncSpeed { 1, _void?, 1 }
+
+state
+( Process.ReqSyncSpeed Template0.ReqSyncSpeed ) 
+[ GCTimer=0.59172458381568660001903481315821 #time=0.59172458381568660001903481315821 ]
+
+delay 1.5539969030216724821258367228438
+
+state
+( Process.ReqSyncSpeed Template0.ReqSyncSpeed ) 
+[ GCTimer=2.1457214868373588601002666109707 #time=2.1457214868373588601002666109707 ]
+
+transition
+Process.ReqSyncSpeed->Process.CheckSyncSpeed { 1, _ReqSpeed!, GCTimer := 0 }
+Template0.ReqSyncSpeed->Template0.CheckSyncSpeed { 1, _ReqSpeed?, GCTimer := 0 }
+
+state
+( Process.CheckSyncSpeed Template0.CheckSyncSpeed ) 
+[ GCTimer=0 #time=2.1457214868373588601002666109707 ]
+
+delay 150.29851803206838667392730712891
+
+state
+( Process.CheckSyncSpeed Template0.CheckSyncSpeed ) 
+[ GCTimer=150.29851803206838667392730712891 #time=152.444239518905732211351278238 ]
+
+transition
+Process.CheckSyncSpeed->Process.CheckClutch { GCTimer >= 150, _OpenClutch!, GCTimer := 0 }
+Template0.CheckSyncSpeed->Template0.CheckClutch { 1, _OpenClutch?, GCTimer := 0 }
+
+state
+( Process.CheckClutch Template0.CheckClutch ) 
+[ GCTimer=0 #time=152.444239518905732211351278238 ]
 
 [2K -- Formula is satisfied.
 1:
-[0]: (0,1) (100.1,1)
+[0]: (0,1) (152.4442395189057,1)

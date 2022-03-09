@@ -24,7 +24,7 @@ public class Main {
 
         long timeInit = System.currentTimeMillis();
 
-        String mutantsFolder = "/home/jaime/Documents/TranslationTraceUppaal/collision/mutCollisionSmaller/";
+        String mutantsFolder = "/home/jaime/Documents/TranslationTraceUppaal/GearControl/mutGearTraces/";
         String folderSave = "gearK100N5Article";
 
         int nTraces = 5;

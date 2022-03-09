@@ -1,1 +1,7 @@
-EXCEPTION: Location Process.Gear has unbounded delay but no positive rate.
+[2K -- Formula is NOT satisfied.
+Location Process.CheckGearNeu
+[ GCTimer=0 #time=53.387877412926059150777291506529 ]
+
+is time-locked.
+1:
+[0]: (0,1) (53.38787741292606,1)

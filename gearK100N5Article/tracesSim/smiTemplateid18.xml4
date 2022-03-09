@@ -1,13 +1,61 @@
 state
-( Process.Gear ) 
+( Process.Gear Template0.Gear ) 
 [ GCTimer=0 #time=0 ]
 
-delay 100.0999999999999943156581139192
+delay 0.24632694466957813506091667932196
 
 state
-( Process.Gear ) 
-[ GCTimer=100.0999999999999943156581139192 #time=100.0999999999999943156581139192 ]
+( Process.Gear Template0.Gear ) 
+[ GCTimer=0.24632694466957813506091667932196 #time=0.24632694466957813506091667932196 ]
+
+transition
+Template0.Gear->Template0.Initiate { 1, _ReqNewGear!, 1 }
+Process.Gear->Process.Initiate { 1, _ReqNewGear?, 1 }
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=0.24632694466957813506091667932196 #time=0.24632694466957813506091667932196 ]
+
+delay 0.46192618597360607379798125293746
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=0.70825313064318418110332231663051 #time=0.70825313064318418110332231663051 ]
+
+transition
+Process.Initiate->Process.CheckTorque { 1, RqZeroTorque!, GCTimer := 0 }
+Template0.Initiate->Template0.CheckTorque { 1, RqZeroTorque?, GCTimer := 0 }
+
+state
+( Process.CheckTorque Template0.CheckTorque ) 
+[ GCTimer=0 #time=0.70825313064318418110332231663051 ]
+
+delay 52.607258583884686231613159179688
+
+state
+( Process.CheckTorque Template0.CheckTorque ) 
+[ GCTimer=52.607258583884686231613159179688 #time=53.315511714527872300095623359084 ]
+
+transition
+Template0.CheckTorque->Template0.ReqNeuGear { GCTimer < 250, _TorqueZero!, 1 }
+
+state
+( Process.CheckTorque Template0.ReqNeuGear ) 
+[ GCTimer=52.607258583884686231613159179688 #time=53.315511714527872300095623359084 ]
+
+delay 201.29014280508272349834442138672
+
+state
+( Process.CheckTorque Template0.ReqNeuGear ) 
+[ GCTimer=253.89740138896740972995758056641 #time=254.6056545196105957984400447458 ]
+
+transition
+Process.CheckTorque->Process.CheckClutch2 { GCTimer >= 250, _OpenClutch!, GCTimer := 0 }
+
+state
+( Process.CheckClutch2 Template0.ReqNeuGear ) 
+[ GCTimer=0 #time=254.6056545196105957984400447458 ]
 
 [2K -- Formula is satisfied.
 1:
-[0]: (0,1) (100.1,1)
+[0]: (0,1) (254.6056545196106,1)

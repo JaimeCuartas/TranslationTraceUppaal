@@ -1,1 +1,49 @@
-EXCEPTION: Location Process.Gear has unbounded delay but no positive rate.
+state
+( Process.Gear Template0.Gear ) 
+[ GCTimer=0 #time=0 ]
+
+delay 0.28715311962502926279583448376798
+
+state
+( Process.Gear Template0.Gear ) 
+[ GCTimer=0.28715311962502926279583448376798 #time=0.28715311962502926279583448376798 ]
+
+transition
+Template0.Gear->Template0.Initiate { 1, _ReqNewGear!, 1 }
+Process.Gear->Process.Initiate { 1, _ReqNewGear?, 1 }
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=0.28715311962502926279583448376798 #time=0.28715311962502926279583448376798 ]
+
+delay 0.12496597015550833797981056250137
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=0.41211908978053757302006943064043 #time=0.41211908978053757302006943064043 ]
+
+transition
+Process.Initiate->Process.CheckTorque { 1, RqZeroTorque!, GCTimer := 0 }
+Template0.Initiate->Template0.CheckTorque { 1, RqZeroTorque?, GCTimer := 0 }
+
+state
+( Process.CheckTorque Template0.CheckTorque ) 
+[ GCTimer=0 #time=0.41211908978053757302006943064043 ]
+
+delay 209.50168584357015788555145263672
+
+state
+( Process.CheckTorque Template0.CheckTorque ) 
+[ GCTimer=209.50168584357015788555145263672 #time=209.91380493335068990745639894158 ]
+
+transition
+Template0.CheckTorque->Template0.ReqNeuGear { GCTimer < 250, _TorqueZero!, 1 }
+Process.CheckTorque->Process.ReqNeuGear { 1, _TorqueZero?, 1 }
+
+state
+( Process.ReqNeuGear Template0.ReqNeuGear ) 
+[ GCTimer=209.50168584357015788555145263672 #time=209.91380493335068990745639894158 ]
+
+[2K -- Formula is satisfied.
+1:
+[0]: (0,1) (209.9138049333507,1)

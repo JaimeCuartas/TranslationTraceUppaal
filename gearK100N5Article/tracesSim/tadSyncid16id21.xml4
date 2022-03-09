@@ -1,13 +1,62 @@
 state
-( Process.Gear ) 
+( Process.Gear Template0.Gear ) 
 [ GCTimer=0 #time=0 ]
 
-delay 100.0999999999999943156581139192
+delay 1.290059565579246392275081234402
 
 state
-( Process.Gear ) 
-[ GCTimer=100.0999999999999943156581139192 #time=100.0999999999999943156581139192 ]
+( Process.Gear Template0.Gear ) 
+[ GCTimer=1.290059565579246392275081234402 #time=1.290059565579246392275081234402 ]
+
+transition
+Template0.Gear->Template0.Initiate { 1, _ReqNewGear!, 1 }
+Process.Gear->Process.Initiate { 1, _ReqNewGear?, 1 }
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=1.290059565579246392275081234402 #time=1.290059565579246392275081234402 ]
+
+delay 1.0901356573051661502660181213287
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=2.380195222884412764585704280762 #time=2.380195222884412764585704280762 ]
+
+transition
+Process.Initiate->Process.ReqSyncSpeed { 1, _void!, 1 }
+Template0.Initiate->Template0.ReqSyncSpeed { 1, _void?, 1 }
+
+state
+( Process.ReqSyncSpeed Template0.ReqSyncSpeed ) 
+[ GCTimer=2.380195222884412764585704280762 #time=2.380195222884412764585704280762 ]
+
+delay 0.98117096312534834989804721772089
+
+state
+( Process.ReqSyncSpeed Template0.ReqSyncSpeed ) 
+[ GCTimer=3.3613661860097612255060539609985 #time=3.3613661860097612255060539609985 ]
+
+transition
+Process.ReqSyncSpeed->Process.CheckSyncSpeed { 1, _ReqSpeed!, GCTimer := 0 }
+Template0.ReqSyncSpeed->Template0.CheckSyncSpeed { 1, _ReqSpeed?, GCTimer := 0 }
+
+state
+( Process.CheckSyncSpeed Template0.CheckSyncSpeed ) 
+[ GCTimer=0 #time=3.3613661860097612255060539609985 ]
+
+delay 110.52347890567034482955932617188
+
+state
+( Process.CheckSyncSpeed Template0.CheckSyncSpeed ) 
+[ GCTimer=110.52347890567034482955932617188 #time=113.88484509168010561097617028281 ]
+
+transition
+Process.CheckSyncSpeed->Process.Initiate { 1, hello!, 1 }
+
+state
+( Process.Initiate Template0.CheckSyncSpeed ) 
+[ GCTimer=110.52347890567034482955932617188 #time=113.88484509168010561097617028281 ]
 
 [2K -- Formula is satisfied.
 1:
-[0]: (0,1) (100.1,1)
+[0]: (0,1) (113.8848450916801,1)

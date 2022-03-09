@@ -1,1 +1,8 @@
-delay 100.1000;
+delay 0.2572;
+output _ReqNewGear();
+delay 2.5150;
+output _void();
+delay 1.3587;
+output _ReqSpeed();
+delay 113.5560;
+output _SpeedSet();

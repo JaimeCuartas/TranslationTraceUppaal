@@ -1,13 +1,61 @@
 state
-( Process.Gear ) 
+( Process.Gear Template0.Gear ) 
 [ GCTimer=0 #time=0 ]
 
-delay 100.0999999999999943156581139192
+delay 1.5837286509586654403847205685452
 
 state
-( Process.Gear ) 
-[ GCTimer=100.0999999999999943156581139192 #time=100.0999999999999943156581139192 ]
+( Process.Gear Template0.Gear ) 
+[ GCTimer=1.5837286509586654403847205685452 #time=1.5837286509586654403847205685452 ]
+
+transition
+Template0.Gear->Template0.Initiate { 1, _ReqNewGear!, 1 }
+Process.Gear->Process.Initiate { 1, _ReqNewGear?, 1 }
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=1.5837286509586654403847205685452 #time=1.5837286509586654403847205685452 ]
+
+delay 0.21796853153388273671708930123714
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=1.8016971824925480660795074072666 #time=1.8016971824925480660795074072666 ]
+
+transition
+Process.Initiate->Process.ReqSyncSpeed { 1, _void!, 1 }
+Template0.Initiate->Template0.ReqSyncSpeed { 1, _void?, 1 }
+
+state
+( Process.ReqSyncSpeed Template0.ReqSyncSpeed ) 
+[ GCTimer=1.8016971824925480660795074072666 #time=1.8016971824925480660795074072666 ]
+
+delay 0.4358596848767770648436226110789
+
+state
+( Process.ReqSyncSpeed Template0.ReqSyncSpeed ) 
+[ GCTimer=2.2375568673693253529677349433769 #time=2.2375568673693253529677349433769 ]
+
+transition
+Process.ReqSyncSpeed->Process.CheckTorque { 1, hello!, 1 }
+
+state
+( Process.CheckTorque Template0.ReqSyncSpeed ) 
+[ GCTimer=2.2375568673693253529677349433769 #time=2.2375568673693253529677349433769 ]
+
+delay 250.20161772419430690206354483962
+
+state
+( Process.CheckTorque Template0.ReqSyncSpeed ) 
+[ GCTimer=252.43917459156364202499389648438 #time=252.43917459156364202499389648438 ]
+
+transition
+Process.CheckTorque->Process.CheckClutch2 { GCTimer >= 250, _OpenClutch!, GCTimer := 0 }
+
+state
+( Process.CheckClutch2 Template0.ReqSyncSpeed ) 
+[ GCTimer=0 #time=252.43917459156364202499389648438 ]
 
 [2K -- Formula is satisfied.
 1:
-[0]: (0,1) (100.1,1)
+[0]: (0,1) (252.4391745915636,1)

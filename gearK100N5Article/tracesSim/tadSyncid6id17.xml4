@@ -1,13 +1,7 @@
-state
-( Process.Gear ) 
-[ GCTimer=0 #time=0 ]
+[2K -- Formula is NOT satisfied.
+Location Process.CheckGearNeu
+[ GCTimer=0 #time=87.585894645185533136100275442004 ]
 
-delay 100.0999999999999943156581139192
-
-state
-( Process.Gear ) 
-[ GCTimer=100.0999999999999943156581139192 #time=100.0999999999999943156581139192 ]
-
-[2K -- Formula is satisfied.
+is time-locked.
 1:
-[0]: (0,1) (100.1,1)
+[0]: (0,1) (87.58589464518553,1)

@@ -1,1 +1,46 @@
-EXCEPTION: Location Process.Gear has unbounded delay but no positive rate.
+state
+( Process.Gear Template0.Gear ) 
+[ GCTimer=0 #time=0 ]
+
+delay 0.095566784259068796036906690005708
+
+state
+( Process.Gear Template0.Gear ) 
+[ GCTimer=0.095566784259068796036906690005708 #time=0.095566784259068796036906690005708 ]
+
+transition
+Process.Gear->Process.CheckSyncSpeed { 1, hello!, 1 }
+
+state
+( Process.CheckSyncSpeed Template0.Gear ) 
+[ GCTimer=0.095566784259068796036906690005708 #time=0.095566784259068796036906690005708 ]
+
+delay 3.3398678859965156284772547223838
+
+state
+( Process.CheckSyncSpeed Template0.Gear ) 
+[ GCTimer=3.4354346702555842441029199108016 #time=3.4354346702555842441029199108016 ]
+
+transition
+Template0.Gear->Template0.Initiate { 1, _ReqNewGear!, 1 }
+
+state
+( Process.CheckSyncSpeed Template0.Initiate ) 
+[ GCTimer=3.4354346702555842441029199108016 #time=3.4354346702555842441029199108016 ]
+
+delay 149.03723647089390169639955274761
+
+state
+( Process.CheckSyncSpeed Template0.Initiate ) 
+[ GCTimer=152.47267114114947617053985595703 #time=152.47267114114947617053985595703 ]
+
+transition
+Process.CheckSyncSpeed->Process.CheckClutch { GCTimer >= 150, _OpenClutch!, GCTimer := 0 }
+
+state
+( Process.CheckClutch Template0.Initiate ) 
+[ GCTimer=0 #time=152.47267114114947617053985595703 ]
+
+[2K -- Formula is satisfied.
+1:
+[0]: (0,1) (152.4726711411495,1)

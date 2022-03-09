@@ -1,13 +1,61 @@
 state
-( Process.Gear ) 
+( Process.Gear Template0.Gear ) 
 [ GCTimer=0 #time=0 ]
 
-delay 100.0999999999999943156581139192
+delay 0.83669608458147659568737708468689
 
 state
-( Process.Gear ) 
-[ GCTimer=100.0999999999999943156581139192 #time=100.0999999999999943156581139192 ]
+( Process.Gear Template0.Gear ) 
+[ GCTimer=0.83669608458147659568737708468689 #time=0.83669608458147659568737708468689 ]
+
+transition
+Template0.Gear->Template0.Initiate { 1, _ReqNewGear!, 1 }
+Process.Gear->Process.Initiate { 1, _ReqNewGear?, 1 }
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=0.83669608458147659568737708468689 #time=0.83669608458147659568737708468689 ]
+
+delay 1.4825625259288677249003285396611
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=2.3192586105103440985431006993167 #time=2.3192586105103440985431006993167 ]
+
+transition
+Process.Initiate->Process.CheckTorque { 1, RqZeroTorque!, GCTimer := 0 }
+Template0.Initiate->Template0.CheckTorque { 1, RqZeroTorque?, GCTimer := 0 }
+
+state
+( Process.CheckTorque Template0.CheckTorque ) 
+[ GCTimer=0 #time=2.3192586105103440985431006993167 ]
+
+delay 46.982349104946479201316833496094
+
+state
+( Process.CheckTorque Template0.CheckTorque ) 
+[ GCTimer=46.982349104946479201316833496094 #time=49.301607715456825076216773595661 ]
+
+transition
+Process.CheckTorque->Process.CheckSyncSpeed { 1, hello!, 1 }
+
+state
+( Process.CheckSyncSpeed Template0.CheckTorque ) 
+[ GCTimer=46.982349104946479201316833496094 #time=49.301607715456825076216773595661 ]
+
+delay 87.680456251972941572603303939104
+
+state
+( Process.CheckSyncSpeed Template0.CheckTorque ) 
+[ GCTimer=134.6628053569194207739201374352 #time=136.98206396742978085967479273677 ]
+
+transition
+Template0.CheckTorque->Template0.ReqNeuGear { GCTimer < 250, _TorqueZero!, 1 }
+
+state
+( Process.CheckSyncSpeed Template0.ReqNeuGear ) 
+[ GCTimer=134.6628053569194207739201374352 #time=136.98206396742978085967479273677 ]
 
 [2K -- Formula is satisfied.
 1:
-[0]: (0,1) (100.1,1)
+[0]: (0,1) (136.9820639674298,1)

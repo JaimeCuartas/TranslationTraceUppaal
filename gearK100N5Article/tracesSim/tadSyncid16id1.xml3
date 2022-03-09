@@ -1,13 +1,7 @@
-state
-( Process.Gear ) 
-[ GCTimer=0 #time=0 ]
+[2K -- Formula is NOT satisfied.
+Location Process.CheckClutchClosed
+[ GCTimer=50.192513295914977788925170898438 #time=52.752884600593887398645165376365 ]
 
-delay 100.0999999999999943156581139192
-
-state
-( Process.Gear ) 
-[ GCTimer=100.0999999999999943156581139192 #time=100.0999999999999943156581139192 ]
-
-[2K -- Formula is satisfied.
+is time-locked.
 1:
-[0]: (0,1) (100.1,1)
+[0]: (0,1) (52.75288460059389,1)

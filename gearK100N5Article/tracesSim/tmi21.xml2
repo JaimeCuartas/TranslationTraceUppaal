@@ -1,13 +1,62 @@
 state
-( Process.Gear ) 
+( Process.Gear Template0.Gear ) 
 [ GCTimer=0 #time=0 ]
 
-delay 100.0999999999999943156581139192
+delay 0.52793284199907453135836021829164
 
 state
-( Process.Gear ) 
-[ GCTimer=100.0999999999999943156581139192 #time=100.0999999999999943156581139192 ]
+( Process.Gear Template0.Gear ) 
+[ GCTimer=0.52793284199907453135836021829164 #time=0.52793284199907453135836021829164 ]
+
+transition
+Template0.Gear->Template0.Initiate { 1, _ReqNewGear!, 1 }
+Process.Gear->Process.Initiate { 1, _ReqNewGear?, 1 }
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=0.52793284199907453135836021829164 #time=0.52793284199907453135836021829164 ]
+
+delay 1.6245077850953115738974474879797
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=2.1524406270943861052558077062713 #time=2.1524406270943861052558077062713 ]
+
+transition
+Process.Initiate->Process.ReqSyncSpeed { 1, _void!, 1 }
+Template0.Initiate->Template0.ReqSyncSpeed { 1, _void?, 1 }
+
+state
+( Process.ReqSyncSpeed Template0.ReqSyncSpeed ) 
+[ GCTimer=2.1524406270943861052558077062713 #time=2.1524406270943861052558077062713 ]
+
+delay 0.52606198046855168204416486332775
+
+state
+( Process.ReqSyncSpeed Template0.ReqSyncSpeed ) 
+[ GCTimer=2.6785026075629376762776701070834 #time=2.6785026075629376762776701070834 ]
+
+transition
+Process.ReqSyncSpeed->Process.CheckSyncSpeed { 1, _ReqSpeed!, GCTimer := 0 }
+Template0.ReqSyncSpeed->Template0.CheckSyncSpeed { 1, _ReqSpeed?, GCTimer := 0 }
+
+state
+( Process.CheckSyncSpeed Template0.CheckSyncSpeed ) 
+[ GCTimer=0 #time=2.6785026075629376762776701070834 ]
+
+delay 134.33365016127936542034149169922
+
+state
+( Process.CheckSyncSpeed Template0.CheckSyncSpeed ) 
+[ GCTimer=134.33365016127936542034149169922 #time=137.01215276884229865572706330568 ]
+
+transition
+Template0.CheckSyncSpeed->Template0.ReqSetGear { GCTimer < 150, _SpeedSet!, 1 }
+
+state
+( Process.CheckSyncSpeed Template0.ReqSetGear ) 
+[ GCTimer=134.33365016127936542034149169922 #time=137.01215276884229865572706330568 ]
 
 [2K -- Formula is satisfied.
 1:
-[0]: (0,1) (100.1,1)
+[0]: (0,1) (137.0121527688423,1)

@@ -1,4 +1,4 @@
 input ;
-output _from_medium_slave(), hello();
+output _void(), _SpeedSet(), _ReqSet(), _ReqTorque(), _ReqNewGear(), _OpenClutch(), _NewGear(), _sport(), _drive(), _TorqueZero(), hello(), _GearSet(), _ReqSpeed(), RqZeroTorque(), _ReqNeu(), _GearNeu();
 precision 1000;
-timeout 105;
+timeout 389;

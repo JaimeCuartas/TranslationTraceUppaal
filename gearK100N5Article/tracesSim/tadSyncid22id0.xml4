@@ -1,1 +1,63 @@
-EXCEPTION: Location Process.Gear has unbounded delay but no positive rate.
+state
+( Process.Gear Template0.Gear ) 
+[ GCTimer=0 #time=0 ]
+
+delay 0.20590682588979622447133976947953
+
+state
+( Process.Gear Template0.Gear ) 
+[ GCTimer=0.20590682588979622447133976947953 #time=0.20590682588979622447133976947953 ]
+
+transition
+Template0.Gear->Template0.Initiate { 1, _ReqNewGear!, 1 }
+Process.Gear->Process.Initiate { 1, _ReqNewGear?, 1 }
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=0.20590682588979622447133976947953 #time=0.20590682588979622447133976947953 ]
+
+delay 0.74114720672874767615212476812303
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=0.94705403261854392837904015323147 #time=0.94705403261854392837904015323147 ]
+
+transition
+Process.Initiate->Process.ReqSyncSpeed { 1, _void!, 1 }
+Template0.Initiate->Template0.ReqSyncSpeed { 1, _void?, 1 }
+
+state
+( Process.ReqSyncSpeed Template0.ReqSyncSpeed ) 
+[ GCTimer=0.94705403261854392837904015323147 #time=0.94705403261854392837904015323147 ]
+
+delay 0.70330091884450252059934882709058
+
+state
+( Process.ReqSyncSpeed Template0.ReqSyncSpeed ) 
+[ GCTimer=1.6503549514630464489783889803221 #time=1.6503549514630464489783889803221 ]
+
+transition
+Process.ReqSyncSpeed->Process.CheckSyncSpeed { 1, _ReqSpeed!, GCTimer := 0 }
+Template0.ReqSyncSpeed->Template0.CheckSyncSpeed { 1, _ReqSpeed?, GCTimer := 0 }
+
+state
+( Process.CheckSyncSpeed Template0.CheckSyncSpeed ) 
+[ GCTimer=0 #time=1.6503549514630464489783889803221 ]
+
+delay 134.32175379362888634204864501953
+
+state
+( Process.CheckSyncSpeed Template0.CheckSyncSpeed ) 
+[ GCTimer=134.32175379362888634204864501953 #time=135.97210874509192990444716997445 ]
+
+transition
+Template0.CheckSyncSpeed->Template0.ReqSetGear { GCTimer < 150, _SpeedSet!, 1 }
+Process.CheckSyncSpeed->Process.ReqSetGear { 1, _SpeedSet?, 1 }
+
+state
+( Process.ReqSetGear Template0.ReqSetGear ) 
+[ GCTimer=134.32175379362888634204864501953 #time=135.97210874509192990444716997445 ]
+
+[2K -- Formula is satisfied.
+1:
+[0]: (0,1) (135.9721087450919,1)

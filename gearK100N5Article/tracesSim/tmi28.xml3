@@ -1,11 +1,24 @@
 state
-( Process.Gear ) 
+( Process.Gear Template0.Gear ) 
 [ GCTimer=0 #time=0 ]
 
-delay 100.0999999999999943156581139192
+delay 1.1877774570097967554715978621971
 
 state
-( Process.Gear ) 
+( Process.Gear Template0.Gear ) 
+[ GCTimer=1.1877774570097967554715978621971 #time=1.1877774570097967554715978621971 ]
+
+transition
+Template0.Gear->Template0.Initiate { 1, _ReqNewGear!, 1 }
+
+state
+( Process.Gear Template0.Initiate ) 
+[ GCTimer=1.1877774570097967554715978621971 #time=1.1877774570097967554715978621971 ]
+
+delay 98.912222542990193119294417556375
+
+state
+( Process.Gear Template0.Initiate ) 
 [ GCTimer=100.0999999999999943156581139192 #time=100.0999999999999943156581139192 ]
 
 [2K -- Formula is satisfied.

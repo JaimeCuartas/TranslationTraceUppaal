@@ -1,1 +1,6 @@
-delay 100.1000;
+delay 0.5454;
+output _ReqNewGear();
+delay 1.8737;
+output RqZeroTorque();
+delay 186.6083;
+output _TorqueZero();
