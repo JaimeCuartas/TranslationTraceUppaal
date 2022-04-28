@@ -1,0 +1,49 @@
+state
+( Process.Gear Template0.Gear ) 
+[ GCTimer=0 #time=0 ]
+
+delay 0.49597947099456207720180600517779
+
+state
+( Process.Gear Template0.Gear ) 
+[ GCTimer=0.49597947099456207720180600517779 #time=0.49597947099456207720180600517779 ]
+
+transition
+Template0.Gear->Template0.Initiate { 1, _ReqNewGear!, 1 }
+Process.Gear->Process.Initiate { 1, _ReqNewGear?, 1 }
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=0.49597947099456207720180600517779 #time=0.49597947099456207720180600517779 ]
+
+delay 1.9529725049386257307304504138301
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=2.4489519759331876969099539564922 #time=2.4489519759331876969099539564922 ]
+
+transition
+Process.Initiate->Process.CheckTorque { 1, RqZeroTorque!, GCTimer := 0 }
+Template0.Initiate->Template0.CheckTorque { 1, RqZeroTorque?, GCTimer := 0 }
+
+state
+( Process.CheckTorque Template0.CheckTorque ) 
+[ GCTimer=0 #time=2.4489519759331876969099539564922 ]
+
+delay 131.79928440833464264869689941406
+
+state
+( Process.CheckTorque Template0.CheckTorque ) 
+[ GCTimer=131.79928440833464264869689941406 #time=134.24823638426784100374788977206 ]
+
+transition
+Template0.CheckTorque->Template0.ReqNeuGear { GCTimer < 250, _TorqueZero!, 1 }
+Process.CheckTorque->Process.ReqNeuGear { 1, _TorqueZero?, 1 }
+
+state
+( Process.ReqNeuGear Template0.ReqNeuGear ) 
+[ GCTimer=131.79928440833464264869689941406 #time=134.24823638426784100374788977206 ]
+
+[2K -- Formula is satisfied.
+1:
+[0]: (0,1) (134.2482363842678,1)

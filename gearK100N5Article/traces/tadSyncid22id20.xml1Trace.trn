@@ -1,0 +1,8 @@
+delay 0.0734;
+output hello();
+delay 0.7439;
+output _ReqNewGear();
+delay 2.2588;
+output _ReqSpeed();
+delay 150.4010;
+output _OpenClutch();

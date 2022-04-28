@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
+<nta>
+<declaration>clock GCTimer ;
+chan hello ;
+chan _ClutchIsClosed , _CloseClutch , _GearSet , _ReqSet , _ReqNewGear , RqZeroTorque , _OpenClutch , _TorqueZero , _NewGear , _ClutchIsOpen , _ReqNeu , _GearNeu , _SpeedSet , _ReqSpeed , _drive , _sport , _ReqTorque , _void ;
+</declaration>
+<template>
+<name x="5" y="5">Template</name>
+<declaration></declaration>
+<location id="id0" x="224" y="608">
+<name x="214" y="578">CheckClutchClosed2</name>
+<label kind="invariant" x="214" y="623">GCTimer&lt;=200</label>
+</location>
+<location id="id1" x="256" y="512">
+<name x="200" y="464">CheckClutchClosed</name>
+<label kind="invariant" x="208" y="480">GCTimer&lt;=200</label>
+</location>
+<location id="id2" x="448" y="512">
+<name x="416" y="528">ClutchClose</name>
+</location>
+<location id="id3" x="448" y="320">
+<name x="464" y="304">CheckGearSet2</name>
+<label kind="invariant" x="464" y="320">GCTimer&lt;=350</label>
+</location>
+<location id="id4" x="320" y="320">
+<name x="248" y="336">ClutchOpen</name>
+</location>
+<location id="id5" x="320" y="160">
+<name x="312" y="120">CheckClutch</name>
+<label kind="invariant" x="304" y="136">GCTimer&lt;=200</label>
+</location>
+<location id="id6" x="448" y="160">
+<name x="472" y="152">ReqSetGear2</name>
+</location>
+<location id="id7" x="448" y="64">
+<name x="464" y="48">GearCheckNeu2</name>
+<label kind="invariant" x="464" y="64">GCTimer&lt;=250</label>
+</location>
+<location id="id8" x="448" y="-32">
+<name x="464" y="-64">ClutchOpen2</name>
+</location>
+<location id="id9" x="224" y="-32">
+<name x="214" y="-62">CheckClutch2</name>
+<label kind="invariant" x="214" y="-17">GCTimer&lt;=200</label>
+</location>
+<location id="id10" x="160" y="416">
+<name x="184" y="400">ReqSetGear11</name>
+</location>
+<location id="id11" x="-32" y="416">
+<name x="-160" y="400">CheckGearSet1</name>
+<label kind="invariant" x="-160" y="416">GCTimer&lt;=350</label>
+</location>
+<location id="id12" x="-32" y="512">
+<name x="-24" y="480">ReqTorqueC</name>
+</location>
+<location id="id13" x="-32" y="608">
+<name x="-80" y="624">GearChanged</name>
+</location>
+<location id="id14" x="-32" y="320">
+<name x="-144" y="296">ReqSetGear12</name>
+</location>
+<location id="id15" x="96" y="256">
+<name x="128" y="240">ReqSetGear</name>
+</location>
+<location id="id16" x="96" y="160">
+<name x="40" y="120">CheckSyncSpeed</name>
+<label kind="invariant" x="48" y="136">GCTimer&lt;=155</label>
+</location>
+<location id="id17" x="192" y="96">
+<name x="208" y="64">CheckGearNeu</name>
+<label kind="invariant" x="208" y="96">GCTimer&lt;=250</label>
+</location>
+<location id="id18" x="32" y="96">
+<name x="-72" y="88">ReqNeuGear</name>
+</location>
+<location id="id19" x="32" y="-32">
+<name x="-16" y="-104">CheckTorque</name>
+<label kind="invariant" x="-24" y="-80">GCTimer&lt;=255</label>
+</location>
+<location id="id20" x="-160" y="160">
+<name x="-208" y="128">ReqSyncSpeed</name>
+</location>
+<location id="id21" x="-160" y="-32">
+<name x="-136" y="-56">Initiate</name>
+</location>
+<location id="id22" x="-160" y="-160">
+<name x="-144" y="-192">Gear</name>
+</location>
+<init ref="id22"/>
+<transition>
+<source ref="id0"/>
+<target ref="id8"/>
+<label kind="synchronisation" x="0" y="0">hello!</label>
+</transition>
+<transition>
+<source ref="id0"/>
+<target ref="id13"/>
+<label kind="synchronisation" x="40" y="608">_ClutchIsClosed?</label>
+</transition>
+<transition>
+<source ref="id6"/>
+<target ref="id0"/>
+<label kind="synchronisation" x="536" y="400">_CloseClutch!</label>
+<label kind="assignment" x="544" y="424">GCTimer=0</label>
+<nail  x="608" y="224"/>
+<nail  x="608" y="608"/>
+</transition>
+<transition>
+<source ref="id1"/>
+<target ref="id12"/>
+<label kind="synchronisation" x="56" y="520">_ClutchIsClosed?</label>
+</transition>
+<transition>
+<source ref="id2"/>
+<target ref="id1"/>
+<label kind="synchronisation" x="304" y="496">_CloseClutch!</label>
+<label kind="assignment" x="312" y="512">GCTimer=0</label>
+</transition>
+<transition>
+<source ref="id3"/>
+<target ref="id2"/>
+<label kind="synchronisation" x="388" y="401">_GearSet?</label>
+</transition>
+<transition>
+<source ref="id4"/>
+<target ref="id3"/>
+<label kind="synchronisation" x="352" y="296">_ReqSet!</label>
+<label kind="assignment" x="336" y="320">GCTimer=0</label>
+</transition>
+<transition>
+<source ref="id6"/>
+<target ref="id3"/>
+<label kind="synchronisation" x="448" y="223">_void!</label>
+<label kind="assignment" x="408" y="232">GCTimer=0</label>
+</transition>
+<transition>
+<source ref="id5"/>
+<target ref="id4"/>
+<label kind="synchronisation" x="260" y="225">_ClutchIsOpen?</label>
+</transition>
+<transition>
+<source ref="id16"/>
+<target ref="id5"/>
+<label kind="synchronisation" x="176" y="144">_OpenClutch!</label>
+<label kind="guard" x="184" y="128">GCTimer &gt;= 150</label>
+<label kind="assignment" x="184" y="160">GCTimer=0</label>
+</transition>
+<transition>
+<source ref="id7"/>
+<target ref="id6"/>
+<label kind="synchronisation" x="456" y="104">_GearNeu?</label>
+</transition>
+<transition>
+<source ref="id8"/>
+<target ref="id7"/>
+<label kind="synchronisation" x="464" y="0">_ReqNeu!</label>
+<label kind="assignment" x="456" y="16">GCTimer=0</label>
+</transition>
+<transition>
+<source ref="id9"/>
+<target ref="id8"/>
+<label kind="synchronisation" x="320" y="-56">_ClutchIsOpen?</label>
+</transition>
+<transition>
+<source ref="id19"/>
+<target ref="id9"/>
+<label kind="synchronisation" x="104" y="-48">_OpenClutch!</label>
+<label kind="guard" x="96" y="-64">GCTimer &gt;= 250</label>
+<label kind="assignment" x="104" y="-24">GCTimer=0</label>
+</transition>
+<transition>
+<source ref="id10"/>
+<target ref="id11"/>
+<label kind="synchronisation" x="32" y="392">_ReqSet!</label>
+<label kind="assignment" x="24" y="416">GCTimer=0</label>
+</transition>
+<transition>
+<source ref="id15"/>
+<target ref="id10"/>
+<label kind="synchronisation" x="112" y="336">_sport?</label>
+<label kind="guard" x="88" y="320">GCTimer &lt; 200</label>
+</transition>
+<transition>
+<source ref="id13"/>
+<target ref="id22"/>
+<label kind="synchronisation" x="-288" y="208">_NewGear!</label>
+<nail  x="-256" y="576"/>
+<nail  x="-256" y="-128"/>
+</transition>
+<transition>
+<source ref="id12"/>
+<target ref="id13"/>
+<label kind="synchronisation" x="-92" y="545">_ReqTorque!</label>
+</transition>
+<transition>
+<source ref="id11"/>
+<target ref="id12"/>
+<label kind="synchronisation" x="-92" y="449">_GearSet?</label>
+</transition>
+<transition>
+<source ref="id14"/>
+<target ref="id11"/>
+<label kind="synchronisation" x="-96" y="336">_ReqSet!</label>
+<label kind="assignment" x="-112" y="352">GCTimer=0</label>
+</transition>
+<transition>
+<source ref="id15"/>
+<target ref="id14"/>
+<label kind="synchronisation" x="-28" y="273">_drive?</label>
+<label kind="guard" x="-64" y="256">GCTimer &lt; 250</label>
+</transition>
+<transition>
+<source ref="id16"/>
+<target ref="id15"/>
+<label kind="synchronisation" x="112" y="200">_SpeedSet?</label>
+<label kind="guard" x="104" y="184">GCTimer &lt; 150</label>
+</transition>
+<transition>
+<source ref="id20"/>
+<target ref="id16"/>
+<label kind="synchronisation" x="-80" y="168">_ReqSpeed!</label>
+<label kind="assignment" x="-80" y="184">GCTimer=0</label>
+</transition>
+<transition>
+<source ref="id17"/>
+<target ref="id20"/>
+<label kind="synchronisation" x="-72" y="120">_GearNeu?</label>
+</transition>
+<transition>
+<source ref="id18"/>
+<target ref="id17"/>
+<label kind="synchronisation" x="72" y="48">_ReqNeu!</label>
+<label kind="assignment" x="64" y="72">GCTimer=0</label>
+</transition>
+<transition>
+<source ref="id19"/>
+<target ref="id18"/>
+<label kind="synchronisation" x="-72" y="32">_TorqueZero?</label>
+<label kind="guard" x="-80" y="8">GCTimer &lt; 250</label>
+</transition>
+<transition>
+<source ref="id21"/>
+<target ref="id19"/>
+<label kind="synchronisation" x="-124" y="-47">RqZeroTorque!</label>
+<label kind="assignment" x="-124" y="-32">GCTimer=0</label>
+</transition>
+<transition>
+<source ref="id21"/>
+<target ref="id20"/>
+<label kind="synchronisation" x="-160" y="47">_void!</label>
+</transition>
+<transition>
+<source ref="id22"/>
+<target ref="id21"/>
+<label kind="synchronisation" x="-212" y="-111">_ReqNewGear?</label>
+</transition>
+</template>
+<system>// Place template instantiations here.
+Process = Template();
+
+// List one or more processes to be composed into a system.
+system Process;</system>
+<queries>
+<query>
+<formula></formula>
+<comment></comment>
+</query>
+</queries>
+</nta>

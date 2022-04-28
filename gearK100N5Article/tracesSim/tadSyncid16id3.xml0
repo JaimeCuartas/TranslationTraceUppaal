@@ -1,0 +1,91 @@
+state
+( Process.Gear Template0.Gear ) 
+[ GCTimer=0 #time=0 ]
+
+delay 2.3397266575658117737646080058767
+
+state
+( Process.Gear Template0.Gear ) 
+[ GCTimer=2.3397266575658117737646080058767 #time=2.3397266575658117737646080058767 ]
+
+transition
+Template0.Gear->Template0.Initiate { 1, _ReqNewGear!, 1 }
+Process.Gear->Process.Initiate { 1, _ReqNewGear?, 1 }
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=2.3397266575658117737646080058767 #time=2.3397266575658117737646080058767 ]
+
+delay 1.1040069001265633286124057121924
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=3.4437335576923748803324087930378 #time=3.4437335576923748803324087930378 ]
+
+transition
+Process.Initiate->Process.ReqSyncSpeed { 1, _void!, 1 }
+Template0.Initiate->Template0.ReqSyncSpeed { 1, _void?, 1 }
+
+state
+( Process.ReqSyncSpeed Template0.ReqSyncSpeed ) 
+[ GCTimer=3.4437335576923748803324087930378 #time=3.4437335576923748803324087930378 ]
+
+delay 1.8905054035705632919928120827535
+
+state
+( Process.ReqSyncSpeed Template0.ReqSyncSpeed ) 
+[ GCTimer=5.3342389612629386164144307258539 #time=5.3342389612629386164144307258539 ]
+
+transition
+Process.ReqSyncSpeed->Process.CheckSyncSpeed { 1, _ReqSpeed!, GCTimer := 0 }
+Template0.ReqSyncSpeed->Template0.CheckSyncSpeed { 1, _ReqSpeed?, GCTimer := 0 }
+
+state
+( Process.CheckSyncSpeed Template0.CheckSyncSpeed ) 
+[ GCTimer=0 #time=5.3342389612629386164144307258539 ]
+
+delay 92.293122815899550914764404296875
+
+state
+( Process.CheckSyncSpeed Template0.CheckSyncSpeed ) 
+[ GCTimer=92.293122815899550914764404296875 #time=97.627361777162491307535674422979 ]
+
+transition
+Template0.CheckSyncSpeed->Template0.ReqSetGear { GCTimer < 150, _SpeedSet!, 1 }
+Process.CheckSyncSpeed->Process.ReqSetGear { 1, _SpeedSet?, 1 }
+
+state
+( Process.ReqSetGear Template0.ReqSetGear ) 
+[ GCTimer=92.293122815899550914764404296875 #time=97.627361777162491307535674422979 ]
+
+delay 2.3034280817823651332787449064199
+
+state
+( Process.ReqSetGear Template0.ReqSetGear ) 
+[ GCTimer=94.596550897681922265292087104172 #time=99.930789858944862658063357230276 ]
+
+transition
+Template0.ReqSetGear->Template0.ReqSetGear12 { GCTimer < 250, _drive!, 1 }
+Process.ReqSetGear->Process.ReqSetGear12 { 1, _drive?, 1 }
+
+state
+( Process.ReqSetGear12 Template0.ReqSetGear12 ) 
+[ GCTimer=94.596550897681922265292087104172 #time=99.930789858944862658063357230276 ]
+
+delay 1.4550057241619813730437726917444
+
+state
+( Process.ReqSetGear12 Template0.ReqSetGear12 ) 
+[ GCTimer=96.051556621843900529711390845478 #time=101.38579558310684092248266097158 ]
+
+transition
+Process.ReqSetGear12->Process.CheckGearSet1 { 1, _ReqSet!, GCTimer := 0 }
+Template0.ReqSetGear12->Template0.CheckGearSet1 { 1, _ReqSet?, GCTimer := 0 }
+
+state
+( Process.CheckGearSet1 Template0.CheckGearSet1 ) 
+[ GCTimer=0 #time=101.38579558310684092248266097158 ]
+
+[2K -- Formula is satisfied.
+1:
+[0]: (0,1) (101.3857955831068,1)

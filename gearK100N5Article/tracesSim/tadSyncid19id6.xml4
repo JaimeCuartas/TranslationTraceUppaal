@@ -1,0 +1,7 @@
+[2K -- Formula is NOT satisfied.
+Location Process.CheckClutchClosed2
+[ GCTimer=0 #time=86.12142582324470652110903756693 ]
+
+is time-locked.
+1:
+[0]: (0,1) (86.12142582324471,1)

@@ -1,0 +1,63 @@
+state
+( Process.Gear Template0.Gear ) 
+[ GCTimer=0 #time=0 ]
+
+delay 1.3528716976445989139676839840831
+
+state
+( Process.Gear Template0.Gear ) 
+[ GCTimer=1.3528716976445989139676839840831 #time=1.3528716976445989139676839840831 ]
+
+transition
+Template0.Gear->Template0.Initiate { 1, _ReqNewGear!, 1 }
+Process.Gear->Process.Initiate { 1, _ReqNewGear?, 1 }
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=1.3528716976445989139676839840831 #time=1.3528716976445989139676839840831 ]
+
+delay 0.32109155530922767196599920680455
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=1.6739632529538266414448344221455 #time=1.6739632529538266414448344221455 ]
+
+transition
+Process.Initiate->Process.ReqSyncSpeed { 1, _void!, 1 }
+Template0.Initiate->Template0.ReqSyncSpeed { 1, _void?, 1 }
+
+state
+( Process.ReqSyncSpeed Template0.ReqSyncSpeed ) 
+[ GCTimer=1.6739632529538266414448344221455 #time=1.6739632529538266414448344221455 ]
+
+delay 1.0205732262125073450675927233533
+
+state
+( Process.ReqSyncSpeed Template0.ReqSyncSpeed ) 
+[ GCTimer=2.6945364791663339865124271454988 #time=2.6945364791663339865124271454988 ]
+
+transition
+Process.ReqSyncSpeed->Process.CheckSyncSpeed { 1, _ReqSpeed!, GCTimer := 0 }
+Template0.ReqSyncSpeed->Template0.CheckSyncSpeed { 1, _ReqSpeed?, GCTimer := 0 }
+
+state
+( Process.CheckSyncSpeed Template0.CheckSyncSpeed ) 
+[ GCTimer=0 #time=2.6945364791663339865124271454988 ]
+
+delay 150.80076979706063866615295410156
+
+state
+( Process.CheckSyncSpeed Template0.CheckSyncSpeed ) 
+[ GCTimer=150.80076979706063866615295410156 #time=153.49530627622698375489562749863 ]
+
+transition
+Process.CheckSyncSpeed->Process.CheckClutch { GCTimer >= 150, _OpenClutch!, GCTimer := 0 }
+Template0.CheckSyncSpeed->Template0.CheckClutch { 1, _OpenClutch?, GCTimer := 0 }
+
+state
+( Process.CheckClutch Template0.CheckClutch ) 
+[ GCTimer=0 #time=153.49530627622698375489562749863 ]
+
+[2K -- Formula is satisfied.
+1:
+[0]: (0,1) (153.495306276227,1)

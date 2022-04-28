@@ -1,0 +1,40 @@
+state
+( Process.Gear Template0.Gear ) 
+[ GCTimer=0 #time=0 ]
+
+delay 2.2223117231199496224292033730308
+
+state
+( Process.Gear Template0.Gear ) 
+[ GCTimer=2.2223117231199496224292033730308 #time=2.2223117231199496224292033730308 ]
+
+transition
+Template0.Gear->Template0.Initiate { 1, _ReqNewGear!, 1 }
+Process.Gear->Process.Initiate { 1, _ReqNewGear?, 1 }
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=2.2223117231199496224292033730308 #time=2.2223117231199496224292033730308 ]
+
+delay 0.75667599634777893413684068946168
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=2.9789877194677285565660440624924 #time=2.9789877194677285565660440624924 ]
+
+transition
+Process.Initiate->Process.ReqSetGear { 1, hello!, 1 }
+
+state
+( Process.ReqSetGear Template0.Initiate ) 
+[ GCTimer=2.9789877194677285565660440624924 #time=2.9789877194677285565660440624924 ]
+
+delay 97.12101228053226975589495850727
+
+state
+( Process.ReqSetGear Template0.Initiate ) 
+[ GCTimer=100.0999999999999943156581139192 #time=100.0999999999999943156581139192 ]
+
+[2K -- Formula is satisfied.
+1:
+[0]: (0,1) (100.1,1)

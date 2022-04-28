@@ -1,0 +1,14 @@
+delay 0.7639;
+output _ReqNewGear();
+delay 0.1777;
+output _void();
+delay 0.8575;
+output _ReqSpeed();
+delay 66.6509;
+output _SpeedSet();
+delay 0.0571;
+output _sport();
+delay 0.0979;
+output _ReqSet();
+delay 150.9904;
+output _GearSet();

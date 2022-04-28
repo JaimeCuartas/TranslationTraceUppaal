@@ -1,0 +1,75 @@
+state
+( Process.Gear Template0.Gear ) 
+[ GCTimer=0 #time=0 ]
+
+delay 0.44385465251920308560329431202263
+
+state
+( Process.Gear Template0.Gear ) 
+[ GCTimer=0.44385465251920308560329431202263 #time=0.44385465251920308560329431202263 ]
+
+transition
+Template0.Gear->Template0.Initiate { 1, _ReqNewGear!, 1 }
+Process.Gear->Process.Initiate { 1, _ReqNewGear?, 1 }
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=0.44385465251920308560329431202263 #time=0.44385465251920308560329431202263 ]
+
+delay 1.3832917033665887984739129024092
+
+state
+( Process.Initiate Template0.Initiate ) 
+[ GCTimer=1.8271463558857918840772072144318 #time=1.8271463558857918840772072144318 ]
+
+transition
+Process.Initiate->Process.ReqSyncSpeed { 1, _void!, 1 }
+Template0.Initiate->Template0.ReqSyncSpeed { 1, _void?, 1 }
+
+state
+( Process.ReqSyncSpeed Template0.ReqSyncSpeed ) 
+[ GCTimer=1.8271463558857918840772072144318 #time=1.8271463558857918840772072144318 ]
+
+delay 2.7140294853288753351705508976011
+
+state
+( Process.ReqSyncSpeed Template0.ReqSyncSpeed ) 
+[ GCTimer=4.5411758412146667751585482619703 #time=4.5411758412146667751585482619703 ]
+
+transition
+Process.ReqSyncSpeed->Process.CheckSyncSpeed { 1, _ReqSpeed!, GCTimer := 0 }
+Template0.ReqSyncSpeed->Template0.CheckSyncSpeed { 1, _ReqSpeed?, GCTimer := 0 }
+
+state
+( Process.CheckSyncSpeed Template0.CheckSyncSpeed ) 
+[ GCTimer=0 #time=4.5411758412146667751585482619703 ]
+
+delay 86.480550876585766673088073730469
+
+state
+( Process.CheckSyncSpeed Template0.CheckSyncSpeed ) 
+[ GCTimer=86.480550876585766673088073730469 #time=91.021726717800433448246621992439 ]
+
+transition
+Process.CheckSyncSpeed->Process.CheckSyncSpeed { 1, hello!, 1 }
+
+state
+( Process.CheckSyncSpeed Template0.CheckSyncSpeed ) 
+[ GCTimer=86.480550876585766673088073730469 #time=91.021726717800433448246621992439 ]
+
+delay 18.096863714718121940450146212243
+
+state
+( Process.CheckSyncSpeed Template0.CheckSyncSpeed ) 
+[ GCTimer=104.57741459130389216625189874321 #time=109.11859043251855894141044700518 ]
+
+transition
+Process.CheckSyncSpeed->Process.CheckSyncSpeed { 1, hello!, 1 }
+
+state
+( Process.CheckSyncSpeed Template0.CheckSyncSpeed ) 
+[ GCTimer=104.57741459130389216625189874321 #time=109.11859043251855894141044700518 ]
+
+[2K -- Formula is satisfied.
+1:
+[0]: (0,1) (109.1185904325186,1)

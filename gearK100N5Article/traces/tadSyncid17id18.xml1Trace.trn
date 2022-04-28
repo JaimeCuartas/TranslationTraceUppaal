@@ -1,0 +1,6 @@
+delay 2.7053;
+output _ReqNewGear();
+delay 0.3567;
+output RqZeroTorque();
+delay 253.3968;
+output _OpenClutch();

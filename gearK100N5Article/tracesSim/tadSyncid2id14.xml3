@@ -1,0 +1,7 @@
+[2K -- Formula is NOT satisfied.
+Location Process.CheckGearSet1
+[ GCTimer=0 #time=65.870215663278358420029690023512 ]
+
+is time-locked.
+1:
+[0]: (0,1) (65.87021566327836,1)
